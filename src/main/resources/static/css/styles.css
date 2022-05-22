@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* --------------------------------------------------------------------- GENERAL ------------------------------------------------------ */
+html {
+    scroll-behavior: smooth; /* Para darle efecto al Scroll vertical */   
+}
+
+* { margin: 0px;
+    padding: 0px;     
+}
+
+/* ------------------------------------------------------------ HEADER ---------------------------------------------------------------- */
+header {
+    width: 100%; 
+    height: 40vw;
+    
+    background-color: gray;
+}
+
+#h-introduccion { /* section */   
+    display: grid;
+    padding: 1em; /* checar aqui*/
+    
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    
+}
+
+#a-text { /* article */
+    background-color: rgb(152, 162, 251);
+
+    height: fit-content;
+    width: fit-content; 
+
+    grid-column: 1/2;
+    padding: 2em;
+
+    text-align: center;
+    font-family: 'Press Start 2P', cursive, Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+#a-text h1 {
+    background-color: yellow;
+}
+
+#a-text p { /* Párrafos */
+    text-align: left;    
+}
+
+#a-img {
+    width: fit-content;
+    height: fit-content;    
+    grid-column: 2/2; 
+    padding: 1em; 
+}
+
+#introductionimg {
+    height: 250px;
+    width: 250px;
+}
+
+/* ----------------------------------------------------------------- BODY --------------------------------------------------------------- */
+body { position: absolute; }
+
+/* -------------------------------------------------------------- SOBRE MI --------------------------------------------------------------- */
+.aboutme{
+    background-color: lightsalmon;
+   
+    align-items: center;
+    display: grid;
+    height: 40vw;
+    width: 100vw;
+   /*grid-template-columns: repeat(10, 1fr);*/   
+}
+
+#info {
+    grid-column: 5/10;
+    padding: 3em;
+    margin-left: 2em;   
+}
+
+#aboutme-img {
+    width: 80%;
+    grid-column: 1/5; 
+    margin-left: 2em;
+}
+
+/* -------------------------------------------------------------- EXPERIENCE -------------------------------------------------------------- */
+#experience {
+    width: 100vw;
+    height: fit-content;
+
+    align-items: center;
+    justify-content: center;
+    align-content: center;  
+    text-align: center;
+
+    background-color: peru;
+
+}
+
+.ex-cards-div {
+    width: fit-content;
+    height: fit-content;
+    display: inline-block;  
+
+    margin: 0 auto;  
+    
+    text-align: center;
+
+    padding: 2em;
+}
+
+/* -------------------------------------------------------------- PROJECTS ------------------------------------------------------------------- */
+.projects {
+    background-color: blueviolet;
+}
+
+/* -------------------------------------------------------------- SKILLS ------------------------------------------------------------------- */
+.skills {
+    background-color: darkolivegreen;  
+
+    display: grid;    
+
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+
+.custom-tooltip { /* Tooltip */
+    --bs-tooltip-bg: var(--bs-primary);
+  }
+  
+  #s-imgs { /* div */
+    border-radius: 15px;
+    padding: 2em;
+    background-color: royalblue;
+  }
+
+  .skills img {
+      width: 100px;
+      height: 100px;
+
+      cursor: pointer;
+      border: 1px solid red; 
+  }
+
+
+  /* ----------------------------------------------------------- CONTÁCTAME --------------------------------------------------------------- */
+  .contactme {      
+      background-color: orchid; /* *** */
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+
+      display: grid;
+  }
+
+  #contactme-div {
+      background-color: coral;
+      width: 70vw;
+      height: fit-content;
+
+      display: grid;
+
+      border-radius: 20px;
+
+      padding: 2em;
+
+     
+  }
+
+  /* -------------------------------------------------------------- FOOTER --------------------------------------------------------------- */
+  footer {
+      background-color: red;
+  }
+
+
+
+

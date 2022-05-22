@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+
+<!-- Head -->
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Edgar Mauricio Barrueta Aguirre</title>
+
+    <!-- CSS Only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+
+<body th:fragment="main">
+
+  <!-- Header-->
+  <header>    
+    <!-- Barra de navegación  -->    
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong">
+      <div class="container-fluid" >
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#h-introduccion">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#aboutme">Sobre mí</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#experience">Experiencia</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Portafolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skills">Habilidades</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contactme">Contáctame</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Introducción -->
+    <section id="h-introduccion"> <!--AQUI A LO MEJOR UN VIDEO-->
+      <article id="a-text">
+        <h1>Desarrollador Java</h1>        
+        <p>Desarrollo y Diseño de páginas Web</p>
+        <p>Desarrollo Back end, Front end y Full Stack</p>
+        <p>Desarrollo de Aplicaciones <img th:src="@{/img/skills/Android.png}" alt="" height="30" width="40"></p>                
+        <p>
+          <a href="#contactme" class="btn btn-success">Contáctame</a>          
+        </p>
+      </article>
+      <article id="a-img">
+        <img id="introductionimg" th:src="@{/img/fondo2.jpg}" alt="">
+      </article>
+    </section>    
+  </header>
+
+    <!-- Cuerpo de la página-->
+    <div class="main">
+
+      <!-- Sobre mí -->      
+      <div id="aboutme" class="aboutme">
+        <img th:src="@{/img/fondo.jpg}" alt="" id="aboutme-img"> 
+        <div id="info">
+          <h1>Sobre mí</h1>
+          <h3>Desarrollador Java</h3>
+          <p>Soy un desarrollador Java</p>
+          <p>Soy un desarrollador Java</p>
+          <p>Soy un desarrollador Java</p>
+          <div id="aboutbtns">           
+            <button type="button" class="btn btn-info">Descargar CV</button>
+          </div>                   
+        </div> 
+      </div>
+
+      <!-- Experiencia (2 cuadros (Bootstrap card) y tal vez un botón donde abra una modal y muestre más información) -->      
+      <div id="experience" class="experience">
+        <h1>Experiencia laboral</h1>
+        <!-- Cards -->
+        <div class="ex-cards-div">
+          <div class="card" style="width: 18rem;">
+            <a href="https://medicoshoy.com/" data-bs-toggle="tooltip" data-bs-placement="top" title="Ir al sitio web">
+              <img th:src="@{/img/MedicosHoy.png}" class="card-img-top" alt="..." height="160" width="323">
+            </a>            
+            <div class="card-body">
+              <h5 class="card-title">Desarrollador Web Java</h5>
+              <h5 class="card-title">(Back end)</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Enero - Abril 2020 (4 meses)</h6>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            </div>
+            <div class="card-body">
+              <a href="#" class="card-link">Proyecto</a>             
+            </div>
+          </div>
+        </div>        
+        <div class="ex-cards-div">
+          <div class="card" style="width: 18rem;">
+            <a href="https://www.gfr.com.mx/" data-bs-toggle="tooltip" data-bs-placement="top" title="Ir al sitio web">
+              <img th:src="@{/img/GFR.png}" class="card-img-top" alt="..." height="160" width="323">
+            </a>            
+            <div class="card-body">
+              <h5 class="card-title">Desarrollador Java</h5>
+              <h5 class="card-title">(Full Stack)</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Mayo - Agosto 2018 (4 meses)</h6>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            </div>
+            <div class="card-body">
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+          </div>
+        </div>
+      </div>          
+     
+      <!-- Proyectos (Aún pendiente si el scroll horizontal será automático o manual) -->      
+      <div id="projects" class="projects">
+        <h1>Proyectos</h1>
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+              <img th:src="@{/img/fondo2.jpg}" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>First slide label</h5>
+                <p>Some representative placeholder content for the first slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img th:src="@{/img/fondo2.jpg}" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Second slide label</h5>
+                <p>Some representative placeholder content for the second slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img th:src="@{/img/fondo2.jpg}" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Third slide label</h5>
+                <p>Some representative placeholder content for the third slide.</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      
+      </div>
+    
+      <!-- Hablilidades (Seran imagenes y queda pendiente si saldrá información al dejar el puntero) -->      
+      <div id="skills" class="skills">
+        <h1>Habilidades</h1>
+        <div id="s-imgs">         
+          <img th:src="@{/img/skills/Java.png}" alt="" 
+          data-bs-toggle="tooltip" data-bs-placement="top" title="Java">
+
+          <img th:src="@{/svg/HTML.svg}" alt=""
+          data-bs-toggle="tooltip" data-bs-placement="top" title="HTML 5">
+
+          <!--! Cambiarle a estos como los de arriba-->
+       
+          <a data-bs-toggle="tooltip" data-bs-placement="top" title="Java">
+            <img th:src="@{/svg/JavaScript.svg}" alt="">
+          </a>
+          <a data-bs-toggle="tooltip" data-bs-placement="top" title="Java">
+            <img th:src="@{/img/skills/Java.png}" alt="">
+          </a>
+          <a data-bs-toggle="tooltip" data-bs-placement="top" title="Java">
+            <img th:src="@{/img/skills/Java.png}" alt="">
+          </a>
+          <a data-bs-toggle="tooltip" data-bs-placement="top" title="Java">
+            <img th:src="@{/img/skills/Java.png}" alt="">
+          </a>
+          <a data-bs-toggle="tooltip" data-bs-placement="top" title="Java">
+            <img th:src="@{/img/skills/Java.png}" alt="">
+          </a>
+          <a data-bs-toggle="tooltip" data-bs-placement="top" title="Java">
+            <img th:src="@{/img/skills/Java.png}" alt="">
+          </a>
+          <a data-bs-toggle="tooltip" data-bs-placement="top" title="Java">
+            <img th:src="@{/img/skills/Java.png}" alt="">
+          </a>
+          <a data-bs-toggle="tooltip" data-bs-placement="top" title="Java">
+            <img th:src="@{/img/skills/Java.png}" alt="">
+          </a>
+                          
+        </div>
+      </div>       
+    
+      <!-- Contacto (Formulario. iconos para las redes, telefono)-->      
+      <div id="contactme" class="contactme">
+        <h1>Contáctame</h1>
+        <div id="contactme-div">
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Correo electrónico</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nombre@email.com">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Asunto</label>
+            <input class="form-control" type="text" value="Contacto" aria-label="Solo lectura" readonly>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Texto</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+          </div>
+          <button class="btn btn-success">Enviar</button>
+        </div>
+       
+      </div> 
+    </div>
+
+    <!-- Footer -->
+    <footer th:fragment="footer">
+      Edgar Mauricio Barrueta Aguirre &copy; 2022 Todos los derechos reservados      
+    </footer>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+    <!-- Tooltip Script -->
+    <script>
+      var tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      var tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script> 
+
+</body>
+</html>
