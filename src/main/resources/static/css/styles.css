@@ -2,89 +2,112 @@
 
 /* --------------------------------------------------------------------- GENERAL ------------------------------------------------------ */
 html {
-    scroll-behavior: smooth; /* Para darle efecto al Scroll vertical */   
+    scroll-behavior: smooth; /* Para darle efecto al Scroll vertical */      
 }
 
-* { margin: 0px;
-    padding: 0px;     
+* { 
+    margin: 0px;
+    padding: 0px; 
+   
+}
+
+/* ------------------------------------------------------------------ NAVBAR -------------------------------------------------------------- */
+
+#navbar {
+    font-family: 'Press Start 2P', cursive, Arial, Helvetica, sans-serif;
+
+    font-size: 17px; 
+    
+    
 }
 
 /* ------------------------------------------------------------ HEADER ---------------------------------------------------------------- */
 header {
-    width: 100%; 
-    height: 40vw;
+  margin-top: 50px;
+    font-family: 'Press Start 2P', cursive, Arial, Helvetica, sans-serif;
     
     background-color: gray;
 }
 
 #h-introduccion { /* section */   
-    display: grid;
-    padding: 1em; /* checar aqui*/
+    display: grid;   
+    padding: 3em;
+
+    border: 20px solid red;
     
     align-items: center;
-    justify-content: center;
-    align-content: center;
-    
+    text-align: center;
 }
 
-#a-text { /* article */
-    background-color: rgb(152, 162, 251);
-
-    height: fit-content;
-    width: fit-content; 
-
+#a-text { /* article */ 
     grid-column: 1/2;
     padding: 2em;
-
-    text-align: center;
-    font-family: 'Press Start 2P', cursive, Arial, Helvetica, sans-serif;
+    
     font-size: 15px;
 }
 
 #a-text h1 {
+    text-align: center;
+    
     background-color: yellow;
 }
 
 #a-text p { /* Párrafos */
-    text-align: left;    
+    text-align: left;          
 }
 
-#a-img {
-    width: fit-content;
-    height: fit-content;    
+#a-text a {
+    float: right;
+}
+
+#a-img {      
     grid-column: 2/2; 
-    padding: 1em; 
+    padding: 2em; 
 }
 
-#introductionimg {
+#introductionimg { /* ESTA SE QUITA DESPUES */
     height: 250px;
     width: 250px;
 }
 
 /* ----------------------------------------------------------------- BODY --------------------------------------------------------------- */
-body { position: absolute; }
+body { 
+    position: absolute;    
+}
 
 /* -------------------------------------------------------------- SOBRE MI --------------------------------------------------------------- */
 .aboutme{
-    background-color: lightsalmon;
-   
-    align-items: center;
     display: grid;
-    height: 40vw;
-    width: 100vw;
-   /*grid-template-columns: repeat(10, 1fr);*/   
+
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    
+    font-family: 'Press Start 2P', cursive, Arial, Helvetica, sans-serif;
+
+    background-color: lightsalmon;
 }
 
 #info {
     grid-column: 5/10;
     padding: 3em;
-    margin-left: 2em;   
+    /*display: grid;*/   
 }
 
-#aboutme-img {
-    width: 80%;
+#info h1 {
+    text-align: center;
+    background-color: yellow;
+}
+
+#info a {
+    display: grid;
+}
+
+#aboutme-img { 
+    /*display: grid;*/
+    width: 100%;
+    padding: 3em;
     grid-column: 1/5; 
-    margin-left: 2em;
 }
 
 /* -------------------------------------------------------------- EXPERIENCE -------------------------------------------------------------- */
