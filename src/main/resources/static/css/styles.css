@@ -8,45 +8,51 @@ html {
 * { 
     margin: 0px;
     padding: 0px; 
-   
+    font-family: 'Press Start 2P', cursive, Arial, Helvetica, sans-serif;
 }
 
 /* ------------------------------------------------------------------ NAVBAR -------------------------------------------------------------- */
 
 #navbar {
     font-family: 'Press Start 2P', cursive, Arial, Helvetica, sans-serif;
+    font-size: 17px;
 
-    font-size: 17px; 
-    
-    
+    border: 5px solid white; 
 }
 
 /* ------------------------------------------------------------ HEADER ---------------------------------------------------------------- */
 header {
-  margin-top: 50px;
+    display: grid; /***********************/
+    margin-top: 50px;
     font-family: 'Press Start 2P', cursive, Arial, Helvetica, sans-serif;
     
     background-color: gray;
 }
 
 #h-introduccion { /* section */   
-    display: grid;   
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* fr: fracción */
+    grid-template-rows: repeat(1, 1fr);    
+
     padding: 3em;
 
-    border: 20px solid red;
+    border-top: 25px solid red;
     
     align-items: center;
     text-align: center;
+    justify-content: center;
 }
 
-#a-text { /* article */ 
-    grid-column: 1/2;
-    padding: 2em;
-    
+#a-text { /* article */
+/* Ocupa de la columna 1 a la 3 */ 
+    grid-column: 1/3;
+
     font-size: 15px;
+
+    background-color: darkcyan; 
 }
 
-#a-text h1 {
+#a-text h1 { /* article title */
     text-align: center;
     
     background-color: yellow;
@@ -56,13 +62,11 @@ header {
     text-align: left;          
 }
 
-#a-text a {
-    float: right;
-}
-
-#a-img {      
-    grid-column: 2/2; 
-    padding: 2em; 
+#a-img { /* article img */
+/* Ocupa de la columna 3 a la misma */          
+    grid-column: 3/3; 
+    
+    background-color: green;    
 }
 
 #introductionimg { /* ESTA SE QUITA DESPUES */
@@ -72,12 +76,17 @@ header {
 
 /* ----------------------------------------------------------------- BODY --------------------------------------------------------------- */
 body { 
-    position: absolute;    
+    position: absolute;      
 }
 
 /* -------------------------------------------------------------- SOBRE MI --------------------------------------------------------------- */
-.aboutme{
+.aboutme{      
     display: grid;
+   
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+
+    padding: 3em;    
 
     justify-content: center;
     align-content: center;
@@ -85,12 +94,23 @@ body {
     
     font-family: 'Press Start 2P', cursive, Arial, Helvetica, sans-serif;
 
+    border-top: 25px solid greenyellow;
+
     background-color: lightsalmon;
 }
 
-#info {
-    grid-column: 5/10;
+#aboutme-img { /* div aboutme img */  
+    background-color: navy;
+    grid-column: 1/1;
+
     padding: 3em;
+}
+
+#info { /* div aboutme text */
+    background-color: red;
+    grid-column: 2/6;
+    padding: 3em; 
+   
     /*display: grid;*/   
 }
 
@@ -99,64 +119,62 @@ body {
     background-color: yellow;
 }
 
-#info a {
+#info a {    
     display: grid;
 }
 
-#aboutme-img { 
-    /*display: grid;*/
-    width: 100%;
-    padding: 3em;
-    grid-column: 1/5; 
-}
 
-/* -------------------------------------------------------------- EXPERIENCE -------------------------------------------------------------- */
-#experience {
-    width: 100vw;
-    height: fit-content;
-
+/* -------------------------------------------------------------- PORTAFOLIO -------------------------------------------------------------- */
+.portafolio { /* div portafolio */
     align-items: center;
     justify-content: center;
     align-content: center;  
+
+    border-top: 65px solid purple;
+}
+
+.portafolio h1 {
     text-align: center;
-
-    background-color: peru;
-
+    background-color: yellow;
 }
 
-.ex-cards-div {
-    width: fit-content;
-    height: fit-content;
-    display: inline-block;  
+#projects-cards { /* div general de las cards*/
+    display: flex;
+}
 
-    margin: 0 auto;  
-    
+#projects-cards h5 {
     text-align: center;
-
-    padding: 2em;
+    font-size: 20px;
+    background-color: yellow;    
 }
 
-/* -------------------------------------------------------------- PROJECTS ------------------------------------------------------------------- */
-.projects {
-    background-color: blueviolet;
+#projects-cards p {
+    font-size: 15px;
 }
+
+#projects-cards a {
+    cursor: pointer;
+    color: black;
+ 
+}
+
+.card-footer {
+    text-align: center;
+}
+
 
 /* -------------------------------------------------------------- SKILLS ------------------------------------------------------------------- */
 .skills {
-    background-color: darkolivegreen;  
-
     display: grid;    
 
     align-items: center;
     justify-content: center;
     align-content: center;
     text-align: center;
+
+    background-color: darkolivegreen;
 }
 
-.custom-tooltip { /* Tooltip */
-    --bs-tooltip-bg: var(--bs-primary);
-  }
-  
   #s-imgs { /* div */
     border-radius: 15px;
     padding: 2em;
@@ -164,13 +182,16 @@ body {
   }
 
   .skills img {
-      width: 100px;
-      height: 100px;
+      width: 125px;
+      height: 125px;
 
       cursor: pointer;
       border: 1px solid red; 
   }
 
+  .custom-tooltip { /* Tooltip */
+    --bs-tooltip-bg: var(--bs-primary);
+  }
 
   /* ----------------------------------------------------------- CONTÁCTAME --------------------------------------------------------------- */
   .contactme {      
