@@ -1,13 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 /* --------------------------------------------------------------------- GENERAL ------------------------------------------------------ */
-html {
+html, body {
     scroll-behavior: smooth; /* Para darle efecto al Scroll vertical */  
-    max-width: 100%;    
 }
 
 * { 
-    max-width: 100%;
+    max-width: 100%;        
     margin: 0px;
     padding: 0px; 
     font-family: 'Press Start 2P', cursive, Arial, Helvetica, sans-serif;
@@ -18,15 +17,13 @@ html {
 #navbar {
     font-size: 17px;  
     /*opacity: 0.5;*/
-  
-
-    border: 5px solid white; 
+    /* border-radius: 15px; */
 }
 
 /* ------------------------------------------------------------ HEADER ---------------------------------------------------------------- */
 header {
-    display: grid; /***********************/
-    margin-top: 50px;
+    
+    margin-top: 50px; 
     
     background-color: gray;
 }
@@ -35,7 +32,7 @@ header {
     display: grid;  
     padding: 3em;
 
-    border-top: 25px solid red;
+    border-top: 65px solid red;
     
     align-items: center;
     text-align: center;
@@ -60,14 +57,19 @@ header {
 }
 
 /* ----------------------------------------------------------------- BODY --------------------------------------------------------------- */
-/* body { 
-    position: absolute;
-} */
+ 
+
+#main {    
+    height: 100vh;
+    width: 100vw;   
+}
 
 /* -------------------------------------------------------------- SOBRE MI --------------------------------------------------------------- */
 #aboutme {
     /*INVESTIGAR ESTOS PARÁMETROS O COMO SE LLAMEN*/      
     max-width: 100%;
+    padding: 2em;
+
     margin: 0 auto;
     display: grid;
     /* Se establece el ancho minimo para que se pase a la siguiente fila*/
@@ -75,23 +77,21 @@ header {
     grid-auto-rows: 0.2fr; /* Espacio entre filas */  
     grid-gap: 10px; /* Separación del grid */
 
-   
-
     align-items: center;
-    justify-content: center;    
+    justify-content: center;       
 
-    border-top: 35px solid greenyellow;
+    border-top: 65px solid greenyellow;
     background-color: lightsalmon;
 }
 
 #info { /* div text */    
-    padding: 3em;
+    padding: 2em;
     background-color: red;
 }
 
 #aboutme-img { /* div  img */ 
     /* grid-column: 5/6; */
-    padding: 3em;
+    padding: 2em;
     text-align: center;
      
     background-color: navy;
@@ -110,20 +110,20 @@ header {
 #portafolio { /* div portafolio */
     align-items: center;
     justify-content: center;
-    align-content: center; 
-    
+    align-content: center;    
 
     border-top: 65px solid purple;
 }
 
 #portafolio h1 {
     text-align: center;
+    font-size: 30px;
     background-color: yellow;
 }
 
 #projects-cards { /* div general de las cards*/
     display: flex;
-    padding: 1em;
+    margin-left: 20px;
 }
 
 #projects-cards h5 {
@@ -136,7 +136,7 @@ header {
     font-size: 15px;
 }
 
-#projects-cards a {
+#projects-cards a { /* Icono */
     cursor: pointer;
     color: black;
  
@@ -149,37 +149,44 @@ header {
 
 /* -------------------------------------------------------------- SKILLS ------------------------------------------------------------------- */
 #skills {
-    display: grid;    
+    height: fit-content; /* Si falla cambiar a 100% */  
+    max-height: 100%;
 
-    align-items: center;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-
-    background-color: darkolivegreen;
+    border-top: 70px solid green;    
 }
 
-  #s-imgs { /* div */
-    border-radius: 15px;
-    padding: 2em;
-    background-color: royalblue;
-  }
+#skills h1 {    
+    text-align: center;
+    font-size: 30px;
+    background-color: yellow;
+}
 
-  #skills img {
-      width: 125px;
-      height: 125px;
+#accordionSkills {
+    display: grid;
+    grid-gap: 5px; /* Separación del grid */    
+    max-height: 95%;    
+    
+    text-align: center;   
 
-      cursor: pointer;
-      border: 1px solid red; 
-  }
+    background-color: red;
+}
 
-  .custom-tooltip { /* Tooltip CHEAR ESTA */
+#skills img {
+    width: 85px;
+    height: 85px;
+
+    cursor: pointer;
+    border: 1px solid red; 
+}
+
+  .custom-tooltip { /* Color de fondo Tooltip */
     --bs-tooltip-bg: var(--bs-danger);
   }
 
   /* ----------------------------------------------------------- CONTÁCTAME --------------------------------------------------------------- */
   #contactme {      
       background-color: orchid; /* *** */
+      border-top: 50px solid black;
       justify-content: center;
       align-content: center;
       align-items: center;
@@ -205,6 +212,8 @@ header {
   footer {
       background-color: red;
   }
+
+ 
 
 
 
