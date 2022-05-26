@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 /* --------------------------------------------------------------------- GENERAL ------------------------------------------------------ */
-html, body {
+html {
     scroll-behavior: smooth; /* Para darle efecto al Scroll vertical */  
 }
 
 * { 
+    max-width: 100vw;
     max-width: 100%;        
     margin: 0px;
     padding: 0px; 
@@ -13,35 +14,28 @@ html, body {
 }
 
 /* ------------------------------------------------------------------ NAVBAR -------------------------------------------------------------- */
-
-#navbar {
-    font-size: 17px;  
-    /*opacity: 0.5;*/
-    /* border-radius: 15px; */
-}
-
+/* .button input, .button a { PARA MISMOS ESTILOS A DIFERENTES CLASES, EKEMENTOS
+    //css stuff here
+}   */
 /* ------------------------------------------------------------ HEADER ---------------------------------------------------------------- */
 header {
-    
-    margin-top: 50px; 
+    height: 70vh;
+    display: grid;
     
     background-color: gray;
 }
 
-#h-introduccion { /* section */  
-    display: grid;  
-    padding: 3em;
-
-    border-top: 65px solid red;
-    
+#h-introduccion { /* div introduction */     
+    display: grid;    
     align-items: center;
     text-align: center;
     justify-content: center;
+    padding-top: 1em;
 }
 
 #a-text { /* article */
     font-size: 18px;
-
+    padding: 2em;
     background-color: darkcyan; 
 }
 
@@ -56,45 +50,46 @@ header {
     text-align: left;          
 }
 
-/* ----------------------------------------------------------------- BODY --------------------------------------------------------------- */
- 
-
-#main {    
-    height: 100vh;
-    width: 100vw;   
-}
-
 /* -------------------------------------------------------------- SOBRE MI --------------------------------------------------------------- */
-#aboutme {
-    /*INVESTIGAR ESTOS PARÁMETROS O COMO SE LLAMEN*/      
-    max-width: 100%;
-    padding: 2em;
+.aboutme {
+    max-height: 100vh;
+    height: 100vh; 
+    padding: 3em;
+    overflow: auto;    
 
     margin: 0 auto;
-    display: grid;
+    display: grid;   
     /* Se establece el ancho minimo para que se pase a la siguiente fila*/
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    grid-auto-rows: 0.2fr; /* Espacio entre filas */  
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-auto-rows: 0.5fr; /* Espacio entre filas */  
     grid-gap: 10px; /* Separación del grid */
 
     align-items: center;
-    justify-content: center;       
+    justify-content: center;
+    align-content: center;
+    text-align: center;
 
-    border-top: 65px solid greenyellow;
     background-color: lightsalmon;
 }
 
 #info { /* div text */    
-    padding: 2em;
-    background-color: red;
+    padding: 2em;    
+    display: table-row;
+
+    background-color: red;    
 }
 
-#aboutme-img { /* div  img */ 
-    /* grid-column: 5/6; */
-    padding: 2em;
+#img { /* div  img */
+    padding: 2em;           
+    display: table-row;
     text-align: center;
      
     background-color: navy;
+}
+
+#img img {
+    width: 100%;
+    height: 100%;
 }
 
 #info h1 {
@@ -102,78 +97,88 @@ header {
     background-color: yellow;
 }
 
+#info p {
+    text-align: left;
+}
+
 #info a {    
     display: grid;
 }
 
 /* -------------------------------------------------------------- PORTAFOLIO -------------------------------------------------------------- */
-#portafolio { /* div portafolio */
-    align-items: center;
-    justify-content: center;
-    align-content: center;    
-
-    border-top: 65px solid purple;
+.portafolio { /* div portafolio */    
+    display: grid;
+    max-height: 100vh; /*min*/
+    overflow: auto;   /*borar*/
+     
+    background-color: lime;
 }
 
-#portafolio h1 {
-    text-align: center;
+.portafolio h1 {    
+    visibility: hidden;
     font-size: 30px;
-    background-color: yellow;
 }
 
 #projects-cards { /* div general de las cards*/
     display: flex;
-    margin-left: 20px;
+    padding: 10px;
+    margin-left: 20px; 
 }
 
-#projects-cards h5 {
+#projects-cards h5 { /* Titulos de cada card */
     text-align: center;
     font-size: 20px;
     background-color: yellow;    
 }
 
-#projects-cards p {
+#projects-cards p { /* Párrafos*/
     font-size: 15px;
 }
 
 #projects-cards a { /* Icono */
     cursor: pointer;
-    color: black;
- 
+    color: black; 
 }
 
-.card-footer {
+.card-footer { /* Footer de la card */
     text-align: center;
 }
 
 
 /* -------------------------------------------------------------- SKILLS ------------------------------------------------------------------- */
-#skills {
-    height: fit-content; /* Si falla cambiar a 100% */  
-    max-height: 100%;
+.skills {      
+    max-height: 100vh;
+    height: 100vh;
 
-    border-top: 70px solid green;    
+    background-color: green;
 }
 
-#skills h1 {    
+.skills h1 {    
     text-align: center;
     font-size: 30px;
-    background-color: yellow;
+    visibility: hidden;
 }
 
 #accordionSkills {
     display: grid;
-    grid-gap: 5px; /* Separación del grid */    
-    max-height: 95%;    
     
-    text-align: center;   
-
-    background-color: red;
+    grid-gap: 10px; /* Separación del grid */    
+    max-height: 100%;    
+    padding: 2em; 
+    
+    align-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-#skills img {
-    width: 85px;
-    height: 85px;
+.skills img {
+    width: 80px;
+    height: 80px;
+    
+    /* Si no gusta quitar estas 3*/
+    text-align: center;
+    border-radius: 50%;
+    padding: 5px;
 
     cursor: pointer;
     border: 1px solid red; 
@@ -184,37 +189,28 @@ header {
   }
 
   /* ----------------------------------------------------------- CONTÁCTAME --------------------------------------------------------------- */
-  #contactme {      
-      background-color: orchid; /* *** */
-      border-top: 50px solid black;
+  .contactme { 
+      display: grid; 
+      height: 100vh;
+          
       justify-content: center;
       align-content: center;
-      align-items: center;
+      text-align: center;
 
-      display: grid;
+      background-color: orchid; /* *** */     
   }
 
   #contactme-div {
       background-color: coral;
-      width: 70vw;
-      height: fit-content;
-
-      display: grid;
-
+      width: 80vw;
+      
       border-radius: 20px;
 
       padding: 2em;
-
-     
   }
 
   /* -------------------------------------------------------------- FOOTER --------------------------------------------------------------- */
   footer {
+      height: 25vh;
       background-color: red;
   }
-
- 
-
-
-
-
