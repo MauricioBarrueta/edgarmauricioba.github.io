@@ -69,296 +69,219 @@
   <!-- Cuerpo de la página -->
   <div id="main">  
 
-    <!-- Sobre mí --> 
-    <div class="aboutme" id="aboutme">      
-      <div id="info">
-        <h1>Sobre mí</h1>
-        <p>Soy un desarrollador Java</p>
-        <p>Soy un desarrollador Java</p>
-        <p>Soy un desarrollador Java</p>
-        <p>Entre mas texto le ponga</p>
-        <p>mas aumenta la altura</p>
-        <p>abkvdkjfkjksjdkjkfjskdjfkj</p>
-        <p>skhdfshdkhdfkhdskfhfdskhd</p>
-        <p>
-          <a href="#" class="btn btn-success">Descargar CV</a>
-        </p>
-      </div>
-      <div id="img"> 
-        <img th:src="@{/img/fondo.jpg}" alt="" >
-       </div>
-    </div>
-   
-    <!-- Proyectos -->
-    <!--TAL VEZ AGREGAR UN CARRUSEL Y DENTRO DE EL AGREGAR LAS CARD-->
-    <div class="portafolio" id="portafolio"> 
-      <h1>Portafolio</h1>        
-      <div class="card-group" id="projects-cards">        
-        <div class="container-fluid mb-4">
-          <div id="div-cards" class="row justify-content-center row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-3">
-            <div class="card">
-              <img th:src="@{/img/MedicosHoy.png}" class="card-img-top" alt="imagen">
-              <div class="card-body">
-                <h5 class="card-title">Sistema administrador de usuarios</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                  content. This content is a little bit longer.</p>
-                <!-- Link a GitHub para ver el código fuente del proyecto -->
-                <a href="#">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                    data-bs-toggle="tooltip" data-bs-placement="right" title="GitHub" class="bi bi-github"
-                    viewBox="0 0 16 16">
-                    <path
-                      d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                  </svg>
-                </a>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Enero - Abril 2020</small>
-              </div>
-            </div>
-
-            <div class="card">
-              <img th:src="@{/img/MedicosHoy.png}" class="card-img-top" alt="imagen">
-              <div class="card-body">
-                <h5 class="card-title">Sistema administrador de usuarios</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                  content. This content is a little bit longer.</p>
-                <!-- Link a GitHub para ver el código fuente del proyecto -->
-                <a href="#">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                    data-bs-toggle="tooltip" data-bs-placement="right" title="GitHub" class="bi bi-github"
-                    viewBox="0 0 16 16">
-                    <path
-                      d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                  </svg>
-                </a>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Enero - Abril 2020</small>
-              </div>
-            </div>
-    
-            <div class="card">
-              <img th:src="@{/img/MedicosHoy.png}" class="card-img-top" alt="imagen">
-              <div class="card-body">
-                <h5 class="card-title">Sistema administrador de usuarios</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                  content. This content is a little bit longer.</p>
-                <!-- Link a GitHub para ver el código fuente del proyecto -->
-                <a href="#">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                    data-bs-toggle="tooltip" data-bs-placement="right" title="GitHub" class="bi bi-github"
-                    viewBox="0 0 16 16">
-                    <path
-                      d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                  </svg>
-                </a>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Enero - Abril 2020</small>
-              </div>
-            </div>
-    
-            <div class="card">
-              <img th:src="@{/img/MedicosHoy.png}" class="card-img-top" alt="imagen">
-              <div class="card-body">
-                <h5 class="card-title">Sistema administrador de usuarios</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                  content. This content is a little bit longer.</p>
-                <!-- Link a GitHub para ver el código fuente del proyecto -->
-                <a href="#">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                    data-bs-toggle="tooltip" data-bs-placement="right" title="GitHub" class="bi bi-github"
-                    viewBox="0 0 16 16">
-                    <path
-                      d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                  </svg>
-                </a>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Enero - Abril 2020</small>
-              </div>
-            </div>
-            <div class="card">
-              <img th:src="@{/img/MedicosHoy.png}" class="card-img-top" alt="imagen">
-              <div class="card-body">
-                <h5 class="card-title">Sistema administrador de usuarios</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                  content. This content is a little bit longer.</p>
-                <!-- Link a GitHub para ver el código fuente del proyecto -->
-                <a href="#">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                    data-bs-toggle="tooltip" data-bs-placement="right" title="GitHub" class="bi bi-github"
-                    viewBox="0 0 16 16">
-                    <path
-                      d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                  </svg>
-                </a>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Enero - Abril 2020</small>
-              </div>
-            </div>
-            <div class="card">
-              <img th:src="@{/img/MedicosHoy.png}" class="card-img-top" alt="imagen">
-              <div class="card-body">
-                <h5 class="card-title">Sistema administrador de usuarios</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                  content. This content is a little bit longer.</p>
-                <!-- Link a GitHub para ver el código fuente del proyecto -->
-                <a href="#">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                    data-bs-toggle="tooltip" data-bs-placement="right" title="GitHub" class="bi bi-github"
-                    viewBox="0 0 16 16">
-                    <path
-                      d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                  </svg>
-                </a>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Enero - Abril 2020</small>
-              </div>
-            </div>
-
-            <div class="card">
-              <img th:src="@{/img/MedicosHoy.png}" class="card-img-top" alt="imagen">
-              <div class="card-body">
-                <h5 class="card-title">Sistema administrador de usuarios</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                  content. This content is a little bit longer.</p>
-                <!-- Link a GitHub para ver el código fuente del proyecto -->
-                <a href="#">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                    data-bs-toggle="tooltip" data-bs-placement="right" title="GitHub" class="bi bi-github"
-                    viewBox="0 0 16 16">
-                    <path
-                      d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                  </svg>
-                </a>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Enero - Abril 2020</small>
-              </div>
-            </div>
-            
-            <div class="card">
-              <img th:src="@{/img/MedicosHoy.png}" class="card-img-top" alt="imagen">
-              <div class="card-body">
-                <h5 class="card-title">Sistema administrador de usuarios</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                  content. This content is a little bit longer.</p>
-                <!-- Link a GitHub para ver el código fuente del proyecto -->
-                <a href="#">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                    data-bs-toggle="tooltip" data-bs-placement="right" title="GitHub" class="bi bi-github"
-                    viewBox="0 0 16 16">
-                    <path
-                      d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                  </svg>
-                </a>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Enero - Abril 2020</small>
-              </div>
-            </div>
-
-            <div class="card">
-              <img th:src="@{/img/MedicosHoy.png}" class="card-img-top" alt="imagen">
-              <div class="card-body">
-                <h5 class="card-title">Sistema administrador de usuarios</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                  content. This content is a little bit longer.</p>
-                <!-- Link a GitHub para ver el código fuente del proyecto -->
-                <a href="#">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                    data-bs-toggle="tooltip" data-bs-placement="right" title="GitHub" class="bi bi-github"
-                    viewBox="0 0 16 16">
-                    <path
-                      d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                  </svg>
-                </a>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Enero - Abril 2020</small>
-              </div>
-            </div>
-            
-          </div>
+    <!-- Sobre mí -->
+    <section class="aboutme" id="aboutme">      
+      <div class="content">
+        <img th:src="@{/img/fondo.jpg}" alt="">
+        <div class="abtm-text">
+          <h1>Sobre mí</h1>
+          <h5>Desarrollador Web - Software - Movil</h5>
+          <p>Soy un desarrollador Java que ya ni se que esctbirie askddsak
+            ljsdljk sdljklsjadlkjalsdjk 
+            sjakljsdalkjlsd dsljljsaljlsda 
+            asdjkjksadjksadkjskjksajkjsajsadjk jsakjasdkjkjsakjkasjkjksajkjksdjkjas
+          </p>
+          <button href="#" class="btn btn-success">Descargar CV</button>
+          </p>    
         </div>
-      </div>
-    </div>
+      </div>         
+    </section>
+
+    <!-- Portafolio -->
+    <section class="portafolio" id="portafolio">  
+      <div class="content">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
+          <div class="carousel-indicators"> <!-- Barras indicadoras -->
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active" >            
+              <div class="card mx-auto"> <!-- Card -->                
+                  <img th:src="@{/img/MedicosHoy.png}" class="card-img-top" alt="imagen" width="100" height="100">
+                  <div class="card-body">
+                    <h5 class="card-title">Sistema administrador de usuarios</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                      content. This content is a little bit longer.</p>
+                    Link a GitHub para ver el código fuente del proyecto                    
+                  </div>
+                  <div class="card-links">
+                    <a href="#">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" data-bs-toggle="tooltip"
+                        data-bs-placement="right" title="GitHub" class="bi bi-github" viewBox="0 0 16 16">
+                        <path
+                          d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted">Enero - Abril 2020</small>
+                  </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="card mx-auto"> <!-- Card -->                
+                <img th:src="@{/img/MedicosHoy.png}" class="card-img-top" alt="imagen" width="100" height="100">
+                <div class="card-body">
+                  <h5 class="card-title">CARD 2</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                    content. This content is a little bit longer.</p>
+                  Link a GitHub para ver el código fuente del proyecto                  
+                </div>
+                <div class="card-links">
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" data-bs-toggle="tooltip"
+                      data-bs-placement="right" title="GitHub" class="bi bi-github" viewBox="0 0 16 16">
+                      <path
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                    </svg>
+                  </a>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Enero - Abril 2020</small>
+                </div>
+            </div>
+            </div>
+            <div class="carousel-item">
+              <div class="card mx-auto"> <!-- Card -->                
+                <img th:src="@{/img/MedicosHoy.png}" class="card-img-top" alt="imagen" width="100" height="100">
+                <div class="card-body">
+                  <h5 class="card-title">CARD 3</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                    content. This content is a little bit longer.</p>
+                  Link a GitHub para ver el código fuente del proyecto                  
+                </div>
+                <div class="card-links">
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" data-bs-toggle="tooltip"
+                      data-bs-placement="right" title="GitHub" class="bi bi-github" viewBox="0 0 16 16">
+                      <path
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                    </svg>
+                  </a>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Enero - Abril 2020</small>
+                </div>
+            </div>
+            </div>
+          </div>
+          <!-- Botones de navegación -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" id="prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" id="next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>      
+    </section>    
     
-    <!-- Hablilidades (Seran imagenes y queda pendiente si saldrá información al dejar el puntero) -->   
-    <!--TALVEZ LOS ICONOS REDONDOS Y CON UN PROGRESS BAR QUE MUESTRE EL NIVEL DE CONOCIMIENTO-->
-    <!--TAL VEZ QUITE EL ACORDEON-->
-    <div class="skills" id="skills">
-      <h1>Habilidades</h1>
-      <div class="accordion accordion-flush open" id="accordionSkills">
-        <div class="accordion-item"> <!-- Pestaña 1 -->
-          <h2 class="accordion-header" id="flush-headingOne">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-              Lenguajes de Programación
-            </button>
-          </h2>
-          <!-- Contenido de la pestaña-->
-          <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne"
-            data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">
-              <img th:src="@{/svg/Java.svg}" alt="" data-bs-toggle="tooltip" data-bs-placement="top"
-                data-bs-custom-class="custom-tooltip" title="Java 8+">
+    <!-- Hablilidades -->    
+    <section class="skills" id="skills">
+      <div class="content">
+        <div class="accordion accordion-flush open" id="accordionSkills">
+          <div class="accordion-item"> <!-- Pestaña 1 -->
+            <h2 class="accordion-header" id="flush-headingOne">
+              Lenguajes
+            </h2>
+            <!-- Contenido de la pestaña-->
+            <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne"
+              data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body"> <!-- Imagenes -->
+                <img th:src="@{/svg/Java.svg}" alt="" data-bs-toggle="tooltip" data-bs-placement="top"
+                  data-bs-custom-class="custom-tooltip" title="Java">
+                <img th:src="@{/svg/JavaScript.svg}" alt="" data-bs-toggle="tooltip" data-bs-placement="top"
+                  data-bs-custom-class="custom-tooltip" title="JavaScript"> 
                 <img th:src="@{/svg/TypeScript.svg}" alt="" data-bs-toggle="tooltip" data-bs-placement="top"
-                data-bs-custom-class="custom-tooltip" title="TypeScript">    
-              <img th:src="@{/svg/HTML.svg}" alt="" data-bs-toggle="tooltip" data-bs-placement="top"
-                data-bs-custom-class="custom-tooltip" title="HTML 5">
+                  data-bs-custom-class="custom-tooltip" title="TypeScript"> 
+                <img th:src="@{/svg/C.svg}" alt="" data-bs-toggle="tooltip" data-bs-placement="top"
+                  data-bs-custom-class="custom-tooltip" title="C#">
+                <img th:src="@{/svg/PHP.svg}" alt="" data-bs-toggle="tooltip" data-bs-placement="top"
+                  data-bs-custom-class="custom-tooltip" title="PHP" style="padding-top: 1em;"> 
+                <img th:src="@{/svg/HTML.svg}" alt="" data-bs-toggle="tooltip" data-bs-placement="top"
+                  data-bs-custom-class="custom-tooltip" title="HTML 5">
+                <img th:src="@{/svg/CSS.svg}" alt="" data-bs-toggle="tooltip" data-bs-placement="top"
+                  data-bs-custom-class="custom-tooltip" title="CSS">
+                <img th:src="@{/svg/jQuery.svg}" alt="" data-bs-toggle="tooltip" data-bs-placement="top"
+                  data-bs-custom-class="custom-tooltip" title="jQuery" style="padding-top: 1em;">
+                <img th:src="@{/svg/json.svg}" alt="" data-bs-toggle="tooltip" data-bs-placement="top"
+                  data-bs-custom-class="custom-tooltip" title="JSON">                
+              </div>
             </div>
           </div>
-        </div>
-        <div class="accordion-item"> <!-- Pestaña 2 -->
-          <h2 class="accordion-header" id="flush-headingTwo">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-              Frameworks - Herramientas - Librerías
-             </button>
-          </h2>
-          <!-- Contenido de la pestaña -->
-          <div id="flush-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="flush-headingTwo"
-            data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">
-              <img th:src="@{/svg/Spring.svg}" alt="" data-bs-toggle="tooltip" data-bs-placement="top"
-                data-bs-custom-class="custom-tooltip" title="Spring Framework">
+          <div class="accordion-item"> <!-- Pestaña 2 -->
+            <h2 class="accordion-header" id="flush-headingTwo">
+              Frameworks - Librerías
+            </h2>
+            <!-- Contenido de la pestaña -->
+            <div id="flush-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="flush-headingTwo"
+              data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+                <img th:src="@{/svg/Spring.svg}" alt="" data-bs-toggle="tooltip" data-bs-placement="top"
+                  data-bs-custom-class="custom-tooltip" title="Spring Framework">                     
+                <img th:src="@{/svg/Angular.svg}" alt="" data-bs-toggle="tooltip" data-bs-placement="top"
+                  data-bs-custom-class="custom-tooltip" title="Angular">
+                <img th:src="@{/svg/Bootstrap.svg}" alt="" data-bs-toggle="tooltip" data-bs-placement="top"
+                  data-bs-custom-class="custom-tooltip" title="Bootstrap">
+                <img th:src="@{/svg/Firebase.svg}" alt="" data-bs-toggle="tooltip" data-bs-placement="top"
+                  data-bs-custom-class="custom-tooltip" title="Firebase">
+                <!-- <img th:src="@{/svg/Thymeleaf.svg}" alt="" data-bs-toggle="tooltip" data-bs-placement="top"
+                  data-bs-custom-class="custom-tooltip" title="Thymeleaf"> -->
+                <img th:src="@{/svg/Hibernate.svg}" alt="" data-bs-toggle="tooltip" data-bs-placement="top"
+                  data-bs-custom-class="custom-tooltip" title="Hibernate">
+                <img th:src="@{/svg/JWT.svg}" alt="" data-bs-toggle="tooltip" data-bs-placement="top"
+                  data-bs-custom-class="custom-tooltip" title="JSON Web Token">
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item"> <!-- Pestaña 3 -->
+            <h2 class="accordion-header" id="flush-headingThree">
+              Herramientas
+            </h2>
+            <!-- Contenido de la pestaña-->
+            <div id="flush-collapseThree" class="accordion-collapse collapse show" aria-labelledby="flush-headingThree"
+              data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+                <img th:src="@{/svg/Git.svg}" alt="" data-bs-toggle="tooltip" data-bs-placement="top"
+                  data-bs-custom-class="custom-tooltip" title="Git - GitHub" style="padding-top: 2em;">
+                <img th:src="@{/svg/VSCode.svg}" alt="" data-bs-toggle="tooltip" data-bs-placement="top"
+                  data-bs-custom-class="custom-tooltip" title="Visual Studio Code">
+                <img th:src="@{/svg/NetBeans.svg}" alt="" data-bs-toggle="tooltip" data-bs-placement="top"
+                  data-bs-custom-class="custom-tooltip" title="NetBeans IDE">
+                <img th:src="@{/svg/Eclipse.svg}" alt="" data-bs-toggle="tooltip" data-bs-placement="top"
+                  data-bs-custom-class="custom-tooltip" title="Eclipse IDE">
+                <img th:src="@{/svg/Android Studio.svg}" alt="" data-bs-toggle="tooltip" data-bs-placement="top"
+                  data-bs-custom-class="custom-tooltip" title="Android Studio">
                 
-              <img th:src="@{/svg/Angular.svg}" alt="" data-bs-toggle="tooltip" data-bs-placement="top"
-              data-bs-custom-class="custom-tooltip" title="Angular">
+                
+                <img th:src="@{/svg/MySQL.svg}" alt="" data-bs-toggle="tooltip" data-bs-placement="top"
+                  data-bs-custom-class="custom-tooltip" title="MySQL">
+                <img th:src="@{/svg/PostgreSQL.svg}" alt="" data-bs-toggle="tooltip" data-bs-placement="top"
+                  data-bs-custom-class="custom-tooltip" title="PostgreSQL">
+                <img th:src="@{/svg/Oracle.svg}" alt="" data-bs-toggle="tooltip" data-bs-placement="top"
+                  data-bs-custom-class="custom-tooltip" title="Oracle Database">
+                <img th:src="@{/svg/SQLite.svg}" alt="" data-bs-toggle="tooltip" data-bs-placement="top"
+                  data-bs-custom-class="custom-tooltip" title="SQLite">  
+                
+                <img th:src="@{/svg/Linux.svg}" alt="" data-bs-toggle="tooltip" data-bs-placement="top"
+                  data-bs-custom-class="custom-tooltip" title="Linux">
+                <img th:src="@{/svg/Office.svg}" alt="" data-bs-toggle="tooltip" data-bs-placement="top"
+                  data-bs-custom-class="custom-tooltip" title="Paquetería Office">
+                
+              </div>
             </div>
           </div>
         </div>
-        <div class="accordion-item"> <!-- Pestaña 3 -->
-          <h2 class="accordion-header" id="flush-headingThree">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-              Bases de Datos - Software
-            </button>
-          </h2>
-          <!-- Contenido de la pestaña-->
-          <div id="flush-collapseThree" class="accordion-collapse collapse show" aria-labelledby="flush-headingThree"
-            data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">
-              <img th:src="@{/svg/MySQL.svg}" alt="" data-bs-toggle="tooltip" data-bs-placement="top"
-                data-bs-custom-class="custom-tooltip" title="MySQL">    
-              <img th:src="@{/svg/VSCode.svg}" alt="" data-bs-toggle="tooltip" data-bs-placement="top"
-                data-bs-custom-class="custom-tooltip" title="Visual Studio Code">
-              <img th:src="@{/svg/Android Studio.svg}" alt="" data-bs-toggle="tooltip" data-bs-placement="top"
-                data-bs-custom-class="custom-tooltip" title="Android Studio">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>    
+      </div>      
+    </section>    
     
     <!-- Contacto (Formulario. iconos para las redes, telefono)-->
     <!--AGREGAR BOTON DE LINKEDIN-->
-    <div class="contactme" id="contactme">
+    <section class="contactme" id="contactme">
       <h1>Contáctame</h1>
       <div id="contactme-div">
         <div class="row">
@@ -381,7 +304,7 @@
         </div>
         <button class="btn btn-success">Enviar</button>
       </div>    
-    </div>
+    </section>
 
     <!-- Footer -->
     <footer>
@@ -396,7 +319,6 @@
     
   </div>
 
-  <!--<script th:src="@{/js/navbar.js}"></script>-->
   <!-- JavaScript Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
