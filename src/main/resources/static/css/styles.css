@@ -5,29 +5,28 @@ html {
     scroll-behavior: smooth; /* Para darle efecto al Scroll vertical */  
 }
 
-* {         
-    max-width: 100%;        
+* { 
+    max-width: 100vw;
+    max-width: 100%;
+    max-height: 100vh;      
     margin: 0px;
     padding: 0px; 
     font-family: 'Press Start 2P', cursive, Arial, Helvetica, sans-serif;
 }
 
-/* ------------------------------------------------------------------ NAVBAR -------------------------------------------------------------- */
-/* .button input, .button a { PARA MISMOS ESTILOS A DIFERENTES CLASES, EKEMENTOS
-    //css stuff here
-}   */
-
-.section-titles {    
-    background-color: yellow;
-    font-size: 25px;
-    text-align: center;
-    /* visibility: hidden; */    
+/* ------------------------------------------------------------ CONTENT ------------------------------------------------------------------ */
+.h-introduccion, .aboutme, .portafolio, .contactme { /*.contactme*/
+    display: flex;
+    justify-content: center;
+    align-items: center; 
 }
 
-/* ------------------------------------------------------------ CONTENT ------------------------------------------------------------------ */
+.aboutme, .portafolio, .skills-cards, .contactme {
+    height: 100vh;   
+}
+
 .content {
-    width: 100vw; /*1280px*/
-    max-width: 100vw; /*95%*/
+    width: 100%; /*1280px*/    
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -37,98 +36,85 @@ html {
 
 /* ------------------------------------------------------------ HEADER ---------------------------------------------------------------- */
 header {
-    height: 70vh;
-    display: grid;
-    
-    background-color: gray;
+    display: flex;
+    height: 70vh;     
+    background-color: gray; /**/
 }
 
-#h-introduccion { /* div introduction */        
-    display: grid;      
-    align-items: center;
-    align-content: center;
-    text-align: center;
-    justify-content: center;
-    padding: 3em;
+.h-introduccion { /* section */  
+    text-align: center;   
 }
 
-#a-text { /* article */
-    font-size: 18px;
-   
-    background-color: darkcyan; 
+.a-text h1 { /* div title */
+    font-size: 30px;  
+    margin-bottom: 10px;  
+    background-color: yellow; /**/
 }
 
-#a-text h1 { /* article title */
-    font-size: 30px;
-    text-align: center;
-    
-    background-color: yellow;
+.a-text h5 { /* div subtitle */
+    margin-bottom: 10px;
+    font-size: 25px;
+    border-bottom: 2px dotted black; 
 }
 
-#a-text p { /* Párrafos */
-    text-align: left;          
+.a-text { /* section div */  
+    font-size: 20px;      
+    background-color: darkcyan; /**/ 
 }
 
 /* -------------------------------------------------------------- SOBRE MI --------------------------------------------------------------- */
-.aboutme { /* Padre */
-    max-height: 100vh;
-    height: 100vh;   
-    /* overflow:hidden;  */
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background-color: lightsalmon;
+.aboutme { /* Section */  
+    background-color: lightsalmon; /**/    
 }
 
-.aboutme .content img {
+.aboutme .content img { /* img */
     height: auto;    
-    max-width: 450px;    
+    max-width: 500px; /*450*/
+    border-radius: 20px;
+    margin-bottom: 5px;    
 }
 
-.abtm-text {
-    max-width: 600px;
-    max-height: fit-content; /*Quitarlo*/
-    padding: 0 10px;
-    background-color: deeppink;
+.abtm-text { /* section div */
+    max-width: 600px;    
+    padding: 1em;
+    background-color: deeppink; /**/
 }
 
-.abtm-text h1 {
-    background-color: yellow;
+.abtm-text h1 { /* div title */  
     font-size: 25px;
-    margin-bottom: 10px;
-    text-transform: capitalize;
+    margin-bottom: 5px;
+    text-align: center;    
+    background-color: yellow;
 }
 
-.abtm-text h5 {
-    font-size: 20px;
-    margin-bottom: 15px;
-    text-transform: capitalize;
+.abtm-text h5 { /* div subtitle */
+    font-size: 22px;
+    margin-bottom: 5px;
+    text-align: center;    
     letter-spacing: 2px;
 }
 
-.abtm-text p {
+.abtm-text p { /* parrafos */
     font-size: 15px;
-    line-height: 28px;
+    line-height: 35px;
     letter-spacing: 1px;
-    margin-bottom: 45px;
+    margin-bottom: 15px;
 }
 
-button:hover { /* Efecto del botón */
-    transform: scale(1.2);
-    background-color: transparent;
+.abtm-text button:hover { /* Efecto del botón */
+    transform: scale(1.1);
+    /* background-color: transparent; */
+    background-color: green;
     border: 2px solid greenyellow;
-    color: greenyellow;
-    transition: .4s;
+    color: white;
+    transition: .5s;
     cursor: pointer;
 }
 
-/*CHECAR LOS PICELES*/
-@media screen and (max-width: 1180px) {
+/*CHECAR LOS PIXELES*/
+@media screen and (max-width: 1180px) { /*1180*/
     .aboutme {
-        width: 100%;
-        
+        width: 100%;       
         height: auto;
         padding: 50px 0px; /*70px*/
     }    
@@ -136,34 +122,30 @@ button:hover { /* Efecto del botón */
 
 @media screen and (max-width: 650px) {
     .aboutme .content img {
-       margin-bottom: 10px; /*20px*/
-    }
+       margin-bottom: 5px;
+    }  
     .abtm-text h1 {
         font-size: 22px;
-        margin-bottom: 20px; /*25px*/
-    }    
+        margin-bottom: 5px; /*25px*/
+    }     
+    .abtm-text h5 {
+        font-size: 20px;
+        margin-bottom: 5px;
+    } 
+    .abtm-text p {
+        font-size: 14px;
+    }   
 }
 
 /* ------------------------------------------------------------------ PORTAFOLIO ---------------------------------------------------------- */
-.portafolio { 
-    height: 100vh;
-    max-height: 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   
-    /* display: grid;    
-    align-items: center;
-    align-content: center;   */
-    
-    background-color: red;
+.portafolio { /* Section */
+    background-color: red; /**/
 }
 
-#carouselExampleIndicators {
-    background-color: greenyellow;
+.carousel-projects { /* Carrusel */    
     max-height: 100vh;
     padding: 3em;
+    background-color: greenyellow; /**/
 }
 
 /* Botones */
@@ -179,10 +161,16 @@ button:hover { /* Efecto del botón */
 }  
 .carousel-indicators .active { background-color: black; }
 
-.card { /* Card */
+.card { /* Cards */
     height: 80vh;
-    width: 100%;
+    width: 90%;
     display: flex;   
+}
+
+.card img {
+    height: 300px; /*PENDIENTE*/
+    border: 1px solid red;
+    border-radius: 15px;
 }
 
 .card h5 { /* Titulos de cada card */
@@ -192,7 +180,7 @@ button:hover { /* Efecto del botón */
 }
 
 .card p { /* Párrafos*/
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .card a { /* Icono */
@@ -209,73 +197,56 @@ button:hover { /* Efecto del botón */
     text-align: center;
 }
 
-/* -------------------------------------------------------------- SKILLS ------------------------------------------------------------------- */
-.skills { /* Section */    
-    max-height: 150vh;
-    height: 150vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    /*PONER UN VIDEO ANIMACION IMAGEN O ALGO DE FONDO*/
-
-    background-color: green;
-}
-
-#accordionSkills {
-    max-height: 100vh;
-    height: auto;
-    /* min-width: 350px; */
-
-    display: grid;    
-    gap: 10px;      
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
-    background-color: red;
-}
-
-#accordionSkills h2 {
-    font-size: 18px;
-    background-color: whitesmoke;
-}
-
-.skills img {
-    width: 80px;
-    height: 80px;
-    border-radius: 20px;
-
-    cursor: pointer;     
-}
-
-  .custom-tooltip { /* Color de fondo Tooltip */
-    --bs-tooltip-bg: var(--bs-danger);
-  }
-
-  /* ----------------------------------------------------------- CONTÁCTAME --------------------------------------------------------------- */
-  .contactme { 
-      display: grid; 
-      height: 100vh;
-          
-      justify-content: center;
-      align-content: center;
-      text-align: center;
-
+/* ----------------------------------------------------------- CONTÁCTAME --------------------------------------------------------------- */  
+.contactme {
       background-color: orchid; /* *** */     
   }
 
-  #contactme-div {
-      background-color: coral;
-      width: 80vw;
-      
-      border-radius: 20px;
-
-      padding: 2em;
+.contact-form {    
+    max-width: 750px;
+    height: auto;     
+    border-radius: 15px;
+    padding: 1em;
+    background-color: coral; /**/
   }
 
-  /* -------------------------------------------------------------- FOOTER --------------------------------------------------------------- */
+  .contact-form h1 { /* form title */
+      text-align: center;
+      font-size: 25px;
+      margin-bottom: 10px;
+      border-bottom: 2px dotted black;      
+  }
+
+  .contact-form button { /* form button */
+      text-align: center;
+      margin-top: 1em;
+  } 
+
+  .content .icons { /* contact icons */
+      margin: 15px 0 0 15px;
+      border: 1px solid red;
+  }
+
+  .contactme .content .icons i {
+      margin-right: 15px;
+  }
+  
+@media screen and (max-width: 1180px) { /*1180*/
+    .contactme {
+        width: 100%;       
+        height: auto;
+        padding: 50px 0px; /*70px*/
+    }    
+}
+
+@media screen and (max-width: 650px) {   
+    .contact-form h1 {
+        font-size: 22px;
+        margin-bottom: 5px; /*25px*/
+    } 
+}
+
+/* -------------------------------------------------------------- FOOTER --------------------------------------------------------------- */
   footer {
       height: 25vh;
       background-color: red;
