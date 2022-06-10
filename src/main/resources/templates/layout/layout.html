@@ -6,29 +6,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Edgar Mauricio Barrueta Aguirre</title>
-
+    
     <!-- CSS Only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">    
     
     <!-- Font Awesome Library -->    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <!-- Animate On Scroll Library (AOS)-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <link rel="stylesheet" th:href="@{/css/styles.css}">
     <link rel="stylesheet" th:href="@{/css/cardSkillsStyle.css}"> <!-- Estilos SASS -->
     <link rel="stylesheet" th:href="@{/css/footerStyles.css}">
-
-    <!-- SASS -->
     
+    <title>Edgar Mauricio Barrueta Aguirre</title>
 </head>
 
-<body th:fragment="body">
-
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" tabindex="0">
   <!-- Navbar  -->  
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      
+  <nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" th:fragment="navbar">
+    <div class="container-fluid">      
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -36,560 +34,619 @@
       <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#h-introduccion">Inicio</a>
+            <a class="nav-link active" aria-current="page" href="http://localhost:8080/portafolio#h-introduccion">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost:8080/portafolio#aboutme">Sobre mí</a>
+            <a class="nav-link" aria-current="page" href="http://localhost:8080/portafolio#aboutme">Sobre mí</a>
           </li>            
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost:8080/portafolio#portafolio">Portafolio</a>
+            <a class="nav-link" aria-current="page" href="http://localhost:8080/portafolio#portafolio">Portafolio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#skills-cards">Habilidades</a>
+            <a class="nav-link" aria-current="page" href="http://localhost:8080/portafolio#skills-cards">Habilidades</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#contactme">Contáctame</a>
+            <a class="nav-link" aria-current="page" href="http://localhost:8080/portafolio#contactme">Contáctame</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Header -->
-  <header>     
-    <!-- Introducción -->
-    <section class="h-introduccion" id="h-introduccion"> <!--AQUI A LO MEJOR UN VIDEO-->
-      <div class="a-text">
-        <h1>Edgar Mauricio Barrueta Aguirre</h1>
-        <h5>Desarrollador Java</h5>        
-        <p>Aquí va el texto de introducción que todavia no sé cual vaya
-          a ser o que cosa voy a poner solo estoy probando
-        </p>
-                        
-        <p>
-          <a href="#contactme" class="btn btn-warning">Contáctame</a>          
-        </p>
-      </div>   
-    </section>    
-  </header>
-
-  <!-- Cuerpo de la página -->
-  <div id="main">  
-
-    <!-- Sobre mí -->
-    <section class="aboutme" id="aboutme">      
+  <!-- Portafolio -->
+  <section class="portafolio" id="portafolio" th:fragment="portafolio" data-aos="fade-up">    
+    <div class="p-card"> <!-- Memorama Card -->      
       <div class="content">
-        <img th:src="@{/img/fondo.jpg}" alt="">
-        <div class="abtm-text">
-          <h1>Sobre mí</h1>
-          <h5>Desarrollador Web - Software - Movil</h5>
-          <p>Soy un desarrollador Java que ya ni se que esctbirie askddsak
-            ljsdljk sdljklsjadlkjalsdjk 
-            sjakljsdalkjlsd dsljljsaljlsda 
-            asdjkjksadjksadkjskjksajkjsajsadjk jsakjasdkjkjsakjkasjkjksajkjksdjkjas
-          </p>
-          <button href="#" class="btnCV btn btn-success">Descargar CV</button>            
+        <div id="p-img">          
+          <img th:src="@{/img/Portafolio/Memorama.jpg}" class="img-item"  alt="'Memorama' - Juego - Java 8, Java Swing, 
+          NetBeans IDE - Año: 2017 ">
         </div>
-      </div>         
-    </section>
-
-    <!-- Portafolio -->
-    <section class="portafolio" id="portafolio">     
-      <div id="carouselExampleIndicators" class="carousel slide carousel-projects" data-bs-touch="false" data-bs-interval="false">
-        <div class="carousel-indicators"> <!-- Barras indicadoras -->          
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-            aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-            aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-            aria-label="Slide 3"></button>
+        <div class="contentBx">
+          <h3>Memorama infantil</h3>
         </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="card mx-auto">
-              <!-- Card -->
-              <img th:src="@{/img/MedicosHoy.png}" class="card-img-top" alt="imagen" width="100" height="100">
-              <div class="card-body">
-                <h5 class="card-title">Sistema administrador de usuarios</h5>
-                <p class="card-text">Breve descripcion del proyecto mencionando las actividades que se hicieron y tal vez
-                  la empresa en donde se realizó</p>
-              </div>
-              <div class="card-links">
-                <a href="#">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" data-bs-toggle="tooltip"
-                    data-bs-placement="top" title="GitHub" class="bi bi-github" viewBox="0 0 16 16">
-                    <path
-                      d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                  </svg>
-                </a>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Aqui podrian ir los iconos de los lenguajes</small>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="card mx-auto">
-              <!-- Card -->
-              <img th:src="@{/img/MedicosHoy.png}" class="card-img-top" alt="imagen" width="100" height="100">
-              <div class="card-body">
-                <h5 class="card-title">CARD 2</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                  content. This content is a little bit longer.</p>
-                Link a GitHub para ver el código fuente del proyecto
-              </div>
-              <div class="card-links">
-                <a href="#">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" data-bs-toggle="tooltip"
-                    data-bs-placement="top" title="GitHub" class="bi bi-github" viewBox="0 0 16 16">
-                    <path
-                      d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                  </svg>
-                </a>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Enero - Abril 2020</small>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="card mx-auto">
-              <!-- Card -->
-              <img th:src="@{/img/MedicosHoy.png}" class="card-img-top" alt="imagen" width="100" height="100">
-              <div class="card-body">
-                <h5 class="card-title">CARD 3</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                  content. This content is a little bit longer.</p>
-                Link a GitHub para ver el código fuente del proyecto
-              </div>
-              <div class="card-links">
-                <a href="#">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" data-bs-toggle="tooltip"
-                    data-bs-placement="top" title="GitHub" class="bi bi-github" viewBox="0 0 16 16">
-                    <path
-                      d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                  </svg>
-                </a>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Enero - Abril 2020</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Botones de navegación -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" id="prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" id="next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>     
-    </section>  
-
-    <!-- Hablilidades --> 
-    <section class="skills-cards" id="skills-cards">      
-      <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-          title="Java">
-          <img th:src="@{/svg/Java.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
-          <div class="info-skills">
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 70%"
-                aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
-            </div>
-          </div>
-      </div>
-      <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-          title="JavaScript">
-          <img th:src="@{/svg/JavaScript.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
-          <!--Agregar esta clase o quitar-->
-          <div class="info-skills">
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 65%"
-                aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">65%</div>
-            </div>
-          </div>
-      </div>
-      <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-          title="TypeScript">
-          <img th:src="@{/svg/TypeScript.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
-          <!--Agregar esta clase o quitar-->
-          <div class="info-skills">
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 70%"
-                aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
-            </div>
-          </div>
-      </div>      
-      <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-        title="C#">
-        <img th:src="@{/svg/C.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
-        <div class="info-skills">
-          <div class="progress">
-            <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 50%" aria-valuenow="50"
-              aria-valuemin="0" aria-valuemax="100">50%</div>
-          </div>
-        </div>
-      </div>
-      <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-          title="PHP">
-          <img th:src="@{/svg/PHP.svg}" alt="" class="position-absolute top-50 start-50 translate-middle"
-            style=" padding-top: 1em">
-          <div class="info-skills">
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 60%"
-                aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
-            </div>
-          </div>
-      </div>
-      <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-          title="HTML">
-          <img th:src="@{/svg/HTML.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
-          <div class="info-skills">
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 80%"
-                aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
-            </div>
-          </div>
-      </div>
-      <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-          title="CSS">
-          <img th:src="@{/svg/CSS.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
-          <div class="info-skills">
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 80%"
-                aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
-            </div>
-          </div>
-      </div>
-      <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-          title="SASS">
-          <img th:src="@{/svg/SASS.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
-          <div class="info-skills">
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 80%"
-                aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
-            </div>
-          </div>
-      </div>
-      <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-          title="jQuery">
-          <img th:src="@{/svg/jQuery.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
-          <div class="info-skills">
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 65%"
-                aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">65%</div>
-            </div>
-          </div>
-      </div>
-      <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-          title="JSON">
-          <img th:src="@{/svg/JSON.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
-          <div class="info-skills">
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 70%"
-                aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
-            </div>
-          </div>
-      </div> 
-      <!-- Frameworks -->
-      <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-          title="Spring Framework">
-          <img th:src="@{/svg/Spring.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
-          <div class="info-skills">
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 80%"
-                aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
-            </div>
-          </div>
-      </div>
-      <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-          title="Thymeleaf">
-          <img th:src="@{/svg/Thymeleaf.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
-          <div class="info-skills">
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 75%"
-                aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
-            </div>
-          </div>
-      </div> 
-      <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-          title="Angular">
-          <img th:src="@{/svg/Angular.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
-          <div class="info-skills">
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 70%"
-                aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
-            </div>
-          </div>
-      </div> 
-      <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-          title="Bootstrap">
-          <img th:src="@{/svg/Bootstrap.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
-          <div class="info-skills">
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 85%"
-                aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
-            </div>
-          </div>
+        <ul class="p-tecnologies"> <!-- Tecnologías -->          
+          <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="Java 8">
+            <i><img th:src="@{/svg/Java.svg}" class="p-tec-svg-icons"></i>
+          </li>         
+          <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="NetBeans IDE">
+            <i><img th:src="@{/svg/NetBeans.svg}" class="p-tec-svg-icons"></i>
+          </li>
+        </ul>
       </div>  
-      <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-          title="Firebase">
-          <img th:src="@{/svg/Firebase.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
-          <div class="info-skills">
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 50%"
-                aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
-            </div>
-          </div>
-      </div> 
-      <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-          title="Hibernate">
-          <img th:src="@{/svg/Hibernate.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
-          <div class="info-skills">
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 70%"
-                aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
-            </div>
-          </div>
-      </div> 
-      <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-          title="JUnit 5">
-          <img th:src="@{/svg/JUnit.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
-          <div class="info-skills">
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 70%"
-                aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
-            </div>
-          </div>
-      </div> 
-      <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-          title="Mockito">
-          <img th:src="@{/svg/Mockito.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
-          <div class="info-skills">
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 70%"
-                aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
-            </div>
-          </div>
-      </div>      
-      <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-          title="JSON Web Token">
-          <img th:src="@{/svg/JWT.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
-          <div class="info-skills">
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 70%"
-                aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
-            </div>
-          </div>
-      </div>
-      <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-          title="Git Bash">
-          <img th:src="@{/svg/Git.svg}" alt="" class="position-absolute top-50 start-50 translate-middle" style="padding-top: 1.5rem;">
-          <div class="info-skills">
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 80%"
-                aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
-            </div>
-          </div>
-      </div>
-      <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-          title="GitHub">
-          <img th:src="@{/svg/GitHub.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
-          <div class="info-skills">
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 80%"
-                aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
-            </div>
-          </div>
-      </div> 
-      <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-          title="Docker">
-          <img th:src="@{/svg/Docker.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
-          <div class="info-skills">
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 60%"
-                aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
-            </div>
-          </div>
-      </div>  
-      <!-- Herramientas -->
-      <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-          title="Visual Studio Code">
-          <img th:src="@{/svg/VSCode.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
-          <div class="info-skills">
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 90%"
-                aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
-            </div>
-          </div>
-      </div> 
-      <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-          title="NetBeans IDE">
-          <img th:src="@{/svg/NetBeans.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
-          <div class="info-skills">
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 90%"
-                aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
-            </div>
-          </div>
-      </div> 
-      <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-          title="Eclipse IDE">
-          <img th:src="@{/svg/Eclipse.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
-          <div class="info-skills">
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 80%"
-                aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
-            </div>
-          </div>
-      </div> 
-      <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-          title="Android Studio">
-          <img th:src="@{/svg/Android Studio.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
-          <div class="info-skills">
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 85%"
-                aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
-            </div>
-          </div>
-      </div> 
-      <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-          title="Unity">
-          <img th:src="@{/svg/Unity.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
-          <div class="info-skills">
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 65%"
-                aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">65%</div>
-            </div>
-          </div>
-      </div>             
-      <!-- Bases de Datos -->
-      <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-          title="MySQL">
-          <img th:src="@{/svg/MySQL.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
-          <div class="info-skills">
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 85%"
-                aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
-            </div>
-          </div>
-      </div> 
-      <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-          title="PostgreSQL">
-          <img th:src="@{/svg/PostgreSQL.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
-          <div class="info-skills">
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 70%"
-                aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
-            </div>
-          </div>
-      </div> 
-      <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-          title="Oracle Database">
-          <img th:src="@{/svg/Oracle.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
-          <div class="info-skills">
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 70%"
-                aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
-            </div>
-          </div>
-      </div> 
-      <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-          title="SQLite">
-          <img th:src="@{/svg/SQLite.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
-          <div class="info-skills">
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 75%"
-                aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
-            </div>
-          </div>
-      </div>
-      <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-          title="Linux">
-          <img th:src="@{/svg/Linux.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
-          <div class="info-skills">
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 50%"
-                aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
-            </div>
-          </div>
-      </div> 
-      <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-          title="Excel">
-          <img th:src="@{/svg/Excel.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
-          <div class="info-skills">
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 50%"
-                aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
-            </div>
-          </div>
-      </div>
+      <ul class="p-icons">
+        <!-- iconos -->
+        <li>
+          <a href="" data-bs-toggle="tooltip" data-bs-placement="left" title="Sitio Web"><i
+              class="fa-solid fa-globe fa-fw fa-xl"></i></a>
+        </li>
+        <li>
+          <a href="" data-bs-toggle="tooltip" data-bs-placement="right" title="Código"><i
+              class="fa-brands fa-github fa-fw fa-xl"></i></a>
+        </li>
+      </ul>
+    </div>  
 
-      
-      
-    
-    </section>
-
-    <!-- Contacto -->
-    <section class="contactme" id="contactme">
-      <div class="content">        
-        <div class="contact-form">
-          <h1>Contáctame</h1>
-          <form>
-            <div class="row">
-              <div class="col md-6">
-                <label for="exampleFormControlInput1" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre/Empresa">
-              </div>
-              <div class="col md-6">
-                <label for="exampleFormControlInput1" class="form-label">E-mail</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="correo@email.com">
-              </div>
-            </div>          
-            <div class="col md-6" style="padding-top: 1em;">
-              <label for="exampleFormControlTextarea1" class="form-label">Texto</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
-            </div>
-            
-            <button class="btn btn-success">Enviar</button>
-
-          </form>                
-        </div> 
-        <div class="icons col-md-5">
-          <p><i class="fa-solid fa-map-location-dot fa-2x"></i>Estado de México, México</p>
-          <p><i class="fa-solid fa-envelope fa-2x"></i>mauba22@outlook.com</p>
-          <p><i class="fa-brands fa-linkedin fa-2x"></i>Linkedin</p>
-          <p><i class="fa-brands fa-facebook fa-2x"></i>Mauricio Barrueta</p>
+    <div class="p-card"> <!-- Buscaminas Card -->      
+      <div class="content">
+        <div id="p-img">
+          <img th:src="@{/img/Portafolio/Buscaminas.jpg}" class="img-item" alt="'Buscaminas' - Juego - Java 8, Java Swing,
+          NetBeans IDE - Año: 2017">
         </div>
-        <!-- <img th:src="@{/img/fondo2.jpg}" alt="">    -->
+        <div class="contentBx">
+          <h3>Sistema Administrador de Usuarios</h3>
+        </div>
+        <ul class="p-tecnologies">
+          <!-- Tecnologías -->
+          <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="Java">
+            <i class="fa-brands fa-java fa-xl"></i>
+          </li>
+          <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="JavaScript">
+            <i class="fa-brands fa-js fa-xl"></i>
+          </li>
+        </ul>
       </div>
-    </section>    
-
-    <!-- Footer -->
-    <footer>
-      <div class="socialMedia">
-        <a href="#" class="fa fa-facebook"></a>
-        <a href="#" class="fa fa-linkedin"></a>
-      </div>
-      <div class="footer-text">
-        Edgar Mauricio Barrueta Aguirre &copy; 2022 Todos los derechos reservados
-      </div>
-    </footer>
+      <ul class="p-icons">
+        <!-- iconos -->
+        <li>
+          <a href="" data-bs-toggle="tooltip" data-bs-placement="left" title="Sitio Web"><i
+              class="fa-solid fa-globe fa-fw fa-xl"></i></a>
+        </li>
+        <li>
+          <a href="" data-bs-toggle="tooltip" data-bs-placement="right" title="Código"><i
+              class="fa-brands fa-github fa-fw fa-xl"></i></a>
+        </li>
+      </ul>
+    </div>  
     
-  </div>
+    <div class="p-card"> <!-- Card -->
+      <!-- Card -->
+      <div class="content">
+        <div id="p-img">
+          <img th:src="@{/img/GFR.png}" class="img-item" alt="img">
+        </div>
+        <div class="contentBx">
+          <h3>Sistema Administrador de Usuarios</h3>
+        </div>
+        <ul class="p-tecnologies">
+          <!-- Tecnologías -->
+          <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="Java">
+            <i class="fa-brands fa-java fa-xl"></i>
+          </li>
+          <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="JavaScript">
+            <i class="fa-brands fa-js fa-xl"></i>
+          </li>
+        </ul>
+      </div>
+      <ul class="p-icons">
+        <!-- iconos -->
+        <li>
+          <a href="" data-bs-toggle="tooltip" data-bs-placement="left" title="Sitio Web"><i
+              class="fa-solid fa-globe fa-fw fa-xl"></i></a>
+        </li>
+        <li>
+          <a href="" data-bs-toggle="tooltip" data-bs-placement="right" title="Código"><i
+              class="fa-brands fa-github fa-fw fa-xl"></i></a>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <!-- Modal Portafolio -->
+  <div th:fragment="p-modal">
+    <div class="modal fade" id="imgPopUpModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img  class="img-modal" src=""> <!--si falla agregar th:src y alt='img modal'-->
+          </div> 
+          <div class="modal-footer">
+            <p></p>
+          </div>         
+        </div>
+      </div>
+    </div>
+  </div>  
+  
+  <!-- Hablilidades -->
+  <section class="skills-cards" id="skills-cards" th:fragment="skills" data-aos="fade-up">
+    <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+      title="Java">
+      <img th:src="@{/svg/Java.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
+      <div class="info-skills">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 70%"
+            aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+      title="JavaScript">
+      <img th:src="@{/svg/JavaScript.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
+      <!--Agregar esta clase o quitar-->
+      <div class="info-skills">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 65%"
+            aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">65%</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+      title="TypeScript">
+      <img th:src="@{/svg/TypeScript.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
+      <!--Agregar esta clase o quitar-->
+      <div class="info-skills">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 70%"
+            aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+      title="C#">
+      <img th:src="@{/svg/C.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
+      <div class="info-skills">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 50%"
+            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+      title="PHP">
+      <img th:src="@{/svg/PHP.svg}" alt="" class="position-absolute top-50 start-50 translate-middle"
+        style=" padding-top: 1em">
+      <div class="info-skills">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 60%"
+            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+      title="HTML">
+      <img th:src="@{/svg/HTML.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
+      <div class="info-skills">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 80%"
+            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+      title="CSS">
+      <img th:src="@{/svg/CSS.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
+      <div class="info-skills">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 80%"
+            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+      title="SASS">
+      <img th:src="@{/svg/SASS.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
+      <div class="info-skills">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 80%"
+            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+      title="jQuery">
+      <img th:src="@{/svg/jQuery.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
+      <div class="info-skills">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 65%"
+            aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">65%</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+      title="JSON">
+      <img th:src="@{/svg/JSON.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
+      <div class="info-skills">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 70%"
+            aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+      title="XML">
+      <img th:src="@{/svg/XML.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
+      <div class="info-skills">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 75%"
+            aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+        </div>
+      </div>
+    </div>
+    <!-- Frameworks -->
+    <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+      title="Spring Framework">
+      <img th:src="@{/svg/Spring.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
+      <div class="info-skills">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 80%"
+            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+      title="Thymeleaf">
+      <img th:src="@{/svg/Thymeleaf.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
+      <div class="info-skills">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 75%"
+            aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+      title="Angular">
+      <img th:src="@{/svg/Angular.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
+      <div class="info-skills">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 70%"
+            aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+      title="Bootstrap">
+      <img th:src="@{/svg/Bootstrap.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
+      <div class="info-skills">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 85%"
+            aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+      title="Firebase">
+      <img th:src="@{/svg/Firebase.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
+      <div class="info-skills">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 50%"
+            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+      title="Hibernate">
+      <img th:src="@{/svg/Hibernate.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
+      <div class="info-skills">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 70%"
+            aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+      title="React Native">
+      <img th:src="@{/svg/React.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
+      <div class="info-skills">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 50%"
+            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+      title="NodeJS">
+      <img th:src="@{/svg/NodeJS.svg}" alt="" class="position-absolute top-50 start-50 translate-middle"
+        style="padding-top: 25px;">
+      <div class="info-skills">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 50%"
+            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+      title="npm">
+      <img th:src="@{/svg/npm.svg}" alt="" class="position-absolute top-50 start-50 translate-middle" style="padding-top: 1.5rem;">
+      <div class="info-skills">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 50%"
+            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+      title="JUnit 5">
+      <img th:src="@{/svg/JUnitt.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
+      <div class="info-skills">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 70%"
+            aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+      title="Mockito">
+      <img th:src="@{/svg/Mockito.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
+      <div class="info-skills">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 70%"
+            aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+      title="Docker">
+      <img th:src="@{/svg/Docker.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
+      <div class="info-skills">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 60%"
+            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+      title="JSON Web Token">
+      <img th:src="@{/svg/JWT.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
+      <div class="info-skills">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 70%"
+            aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+      title="Git - Git Bash">
+      <img th:src="@{/svg/Git.svg}" alt="" class="position-absolute top-50 start-50 translate-middle"
+        style="padding-top: 1.5rem;">
+      <div class="info-skills">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 80%"
+            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+      title="GitHub">
+      <img th:src="@{/svg/GitHub.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
+      <div class="info-skills">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 80%"
+            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+        </div>
+      </div>
+    </div>
+    <!-- Herramientas -->
+    <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+      title="Visual Studio Code">
+      <img th:src="@{/svg/VSCode.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
+      <div class="info-skills">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 90%"
+            aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+      title="NetBeans IDE">
+      <img th:src="@{/svg/NetBeans.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
+      <div class="info-skills">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 90%"
+            aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+      title="Eclipse IDE">
+      <img th:src="@{/svg/Eclipse.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
+      <div class="info-skills">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 80%"
+            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+      title="Android Studio">
+      <img th:src="@{/svg/Android Studio.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
+      <div class="info-skills">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 85%"
+            aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+      title="Unity">
+      <img th:src="@{/svg/Unity.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
+      <div class="info-skills">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 65%"
+            aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">65%</div>
+        </div>
+      </div>
+    </div>
+    <!-- Bases de Datos -->
+    <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+      title="WampServer - Apache">
+      <img th:src="@{/svg/WAMP.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
+      <div class="info-skills">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 85%"
+            aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+      title="MySQL">
+      <img th:src="@{/svg/MySQL.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
+      <div class="info-skills">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 85%"
+            aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+      title="PostgreSQL">
+      <img th:src="@{/svg/PostgreSQL.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
+      <div class="info-skills">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 70%"
+            aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+      title="Oracle Database">
+      <img th:src="@{/svg/Oracle.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
+      <div class="info-skills">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 70%"
+            aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+      title="SQLite">
+      <img th:src="@{/svg/SQLite.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
+      <div class="info-skills">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 75%"
+            aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+      title="Postman">
+      <img th:src="@{/svg/Postman.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
+      <div class="info-skills">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 85%"
+            aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+      title="Linux">
+      <img th:src="@{/svg/Linux.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
+      <div class="info-skills">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 50%"
+            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+      title="Command Prompt">
+      <img th:src="@{/svg/cmd.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
+      <div class="info-skills">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 80%"
+            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+      title="Excel">
+      <img th:src="@{/svg/Excel.svg}" alt="" class="position-absolute top-50 start-50 translate-middle">
+      <div class="info-skills">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 50%"
+            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Contacto -->
+  <section class="contactme" id="contactme" th:fragment="contact" data-aos="fade-up">
+    <div class="content">
+      <div class="contact-form" data-aos="fade-right">
+        <h1>Contáctame</h1>
+        <form>
+          <div class="row">
+            <div class="col md-6">
+              <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre/Empresa">
+            </div>
+            <div class="col md-6">
+              <label for="exampleFormControlInput1" class="form-label">E-mail</label>
+              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="correo@email.com">
+            </div>
+          </div>
+          <div class="col md-6" style="padding-top: 1em;">
+            <label for="exampleFormControlTextarea1" class="form-label">Texto</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+          </div>
+          <button class="btn btn-success">Enviar</button>
+        </form>
+      </div>
+      <div class="icons col-md-5" data-aos="fade-left">
+        <p><i class="fa-solid fa-map-location-dot fa-fw fa-xl"></i>Estado de México, México</p>
+        <p><a href=""><i class="fa-solid fa-envelope fa-fw fa-xl"></i></a>mauba22@outlook.com</p>
+        <p><a href=""><i class="fa-brands fa-linkedin fa-fw fa-xl"></i></a>Linkedin</p>
+        <p><a href=""><i class="fa-brands fa-facebook fa-fw fa-xl"></i></a>Mauricio Barrueta</p>
+      </div>
+    </div>
+  </section>
 
-  <!-- JavaScript Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
-  </script>
-  <!-- Tooltip Script -->
-  <script>
-    var tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-    var tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-  </script>
+  <!-- Scripts -->
+  <th:block th:fragment="end-scripts">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+    </script>
 
+    <!-- jQuery script -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 
+      crossorigin="anonymous">
+    </script>
+    
+    <!-- Animate On Scroll Library Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Inicializar librería AOS -->
+    <script>
+      AOS.init({
+          once: true,
+          duration: 1500,
+          delay: 0,
+          easing: 'ease-in-out'
+        });
+    </script> 
+
+    <!-- Main js scripts -->
+    <script type="text/javascript" th:src="@{/js/main.js}"></script>
+    
+    <!-- Tooltip Script -->
+    <script>
+      var tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      var tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script> 
+
+  </th:block>
+  
 </body>
 </html>
