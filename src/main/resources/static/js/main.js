@@ -2,16 +2,14 @@
 const btnSTT = document.querySelector('.ScrollToTop');
 btnSTT.addEventListener('click', function() {
     window.scrollTo({
-        top: 0,
-        left: 0,
+        top: 0, left: 0,
         behavior: "smooth"
     });
 });
 /* Hace visible el bóton al iniciar el scroll descendente */
 window.addEventListener('scroll', e => {
-    btnSTT.style.display = window.scrollY > 50 ? 'block' : 'none';
-});
-  
+    btnSTT.style.display = window.scrollY > 150 ? 'block' : 'none';    
+});  
 
 /* Resalta en la navbar la sección en la que se encuentra */
 $(document).ready(function () {
@@ -26,20 +24,52 @@ $(document).ready(function () {
 document.addEventListener("click", function(e) {
     if (e.target.classList.contains('img-item')) {       
         const src = e.target.getAttribute('src');
-        document.querySelector('.img-modal').src = src;        
+        document.querySelector('.img-modal').src = src; 
         const myModal = new bootstrap.Modal(document.getElementById('imgPopUpModal'));        
         $("#imgPopUpModal p").text($(e.target).attr('alt')); /* Se pasa el valor de 'alt' de la imagen al elemento <p> */
-        myModal.show();        
+        $("#imgPopUpModal h6").text($(e.target).attr('title')); /* Se pasa el valor de 'title' de la imagen al elemento <h6> */
+        myModal.show();
      }     
 });
 
 /* Hace zoom a la imagen de las cards del portafolio cada que se pone el cursor */
 $(".img-item").hover(function() {
     $(this).closest(".img-item").css("z-index", 1);    
-    $(this).animate({ height: "175", width: "225"}, "fast");
+    $(this).animate({ height: "210", width: "310"}, "fast");
 }, 
 function() {
     $(this).closest(".img-item").css("z-index", 0);
-    $(this).animate({ height: "150", width: "200" }, "fast");
+    $(this).animate({ height: "200", width: "300" }, "fast");
 });
 
+/* Función que obtiene los datos del formulario para enviar el correo electrónico */
+const $form = document.querySelector('#c-form');
+const btnEmailTo = document.querySelector('#myEmail');
+
+$form.addEventListener('submit', onSubmit)
+
+function onSubmit(event) {
+    event.preventDefault()
+    const form = new FormData(this)
+
+    const btnSendEmail = $('#btnSendEmail')
+    const btnHtmlElements = btnSendEmail.html() // Almacena las caracteristicas del botón
+    
+    $(btnSendEmail).html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>&nbsp; Procesando...').prop('disabled', true)
+    
+    /* Función que agrega un spinner antes de completar el envío del formulario */
+    setTimeout(function () {
+        $(btnSendEmail).html(btnHtmlElements).prop('disabled', false) // Regresa el btn a como estaba originalmente
+        btnEmailTo.setAttribute('href', `mailto:mauba22@outlook.com?subject=Quiero contactar: ${form.get('name')} - ${form.get('email')}&body=${form.get('message')}`)
+        btnEmailTo.click();
+    }, 
+    4000) // 4 segundos
+}
+
+(new IntersectionObserver(function(e,o){
+    if (e[0].intersectionRatio > 0){
+        document.documentElement.removeAttribute('class');
+    } else {
+        document.documentElement.setAttribute('class','stuck');
+    };
+})).observe(document.querySelector('.trigger'));
