@@ -7,8 +7,13 @@ html { scroll-behavior: smooth; } /* Para darle efecto al Scroll vertical */
 * { 
     box-sizing: border-box; /*QUITAR ESTO*/
     max-width: 100%;    
-    margin: 0px; padding: 0px; 
-    font-family: 'Press Start 2P', cursive, Arial, Helvetica, sans-serif;
+    margin: 0; padding: 0; 
+    font-family: 'Press Start 2P', cursive, Arial, Helvetica;
+}
+html, body {
+	padding: 0;	margin: 0;
+	background-color: #F4F6F7;
+    /* background-image: radial-gradient(circle, #f4f6f7, #ddedf2, #c5e3ec, #acdbe4, #91d2da, #82c8ce, #73bec3, #64b4b7, #5ea6aa, #57999d, #518c90, #4b7f83); */
 }
 
 .sectionTitles { /* Sections Titles */
@@ -17,17 +22,29 @@ html { scroll-behavior: smooth; } /* Para darle efecto al Scroll vertical */
     border-radius: 5px; padding: 0.5rem;
     text-align: center; font-size: 20px;
     margin-bottom: 5px;
-  }
+}
+
+.parts {
+    color: black;
+    font-size: 1.125rem;
+    opacity: 0.75;
+    display: flex;   
+    width: 90%;
+}
+
+.tags, .parts {
+    color: black;
+    font-size: 15px;
+    opacity: 0.75;
+
+}
 
 /* ------------------------------------------------------------ DISPLAY ------------------------------------------------------------------ */
 header, .aboutme, .contactme {
     display: flex;
     justify-content: center; align-items: center; align-content: center;
 }
-.aboutme, header {
-    max-height: 100vh;  height: 100vh;   
-}
-.portafolio, .contactme {
+header, .aboutme, .portafolio, .contactme {
     min-height: 100vh;
     padding: 1em;
 }
@@ -55,6 +72,14 @@ header, .aboutme, .contactme {
     background-color: black; color: white;
 }
 
+.modalSpinner .mod-spinner{
+    display: table;
+    text-align: center;
+    position: relative; margin: 0 auto;
+    background-color: transparent; border: none;
+    box-shadow: none;
+}  
+
 /* -------------------------------------------------------------------- NAVBAR ---------------------------------------------------------- */
 .sticky-top {
     transition: all 0.2s ease-in-out;
@@ -63,27 +88,38 @@ header, .aboutme, .contactme {
     background-color: #6CC6C9;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);     
 }
+.navbar-brand, .stuck .navbar.sticky-top .navbar-brand {
+    position: absolute;
+    margin: 0; padding: 0; border: 1px solid red;
+}
+.navbar-brand .switchlang {    
+    border: 0; background-color: transparent;     
+}
+.navbar-brand .switchlang img {
+    width: 35px; height: 20px;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);    
+}
+.navbar-brand .switchlang img:hover {
+    transform: translateY(3px);
+}
 .navbar .navbar-collapse a:hover {
     background-color: #4B7F83;
     border-radius: 10px;
     transition: 0.3s; transform: translateY(3px);
 }
-.navbar-nav a.nav-link, a.nav-link.active { 
-    text-shadow: 2px 2px 4px #324B4D;
-    transition: 0.5s;
+.nav-tabs a.nav-link, a.nav-link.active { 
+    text-shadow: 2px 2px 4px #324B4D; transition: 0.5s;
 }
-
 .stuck .navbar.sticky-top { /* Navbar-Sticky Styles */
     background-color: #4B7F83;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);      
 }
-.stuck .navbar.sticky-top .navbar-nav a.nav-link.active {
-    text-shadow: 2px 2px 4px #324B4D;
-    transition: 0.5s;
+.stuck .navbar.sticky-top .nav-tabs a.nav-link.active {
+    text-shadow: 2px 2px 4px #324B4D; transition: 0.5s;
 }
-.stuck .navbar.sticky-top .navbar-nav a.nav-link {
-    text-shadow: 2px 2px 4px #324B4D;
-    transition: 0.5s;
+.stuck .navbar.sticky-top .nav-tabs a.nav-link {
+    text-shadow: 2px 2px 4px #324B4D; transition: 0.5s;
 } 
 .stuck .navbar.sticky-top .navbar-collapse a:hover {
     background-color: #6CC6C9;
@@ -92,24 +128,25 @@ header, .aboutme, .contactme {
 }
 
 /* ------------------------------------------------------------ HEADER ---------------------------------------------------------------- */
+header {
+    background-image: url(../svg/wave-down.svg), url(../svg/wave-up.svg);
+    background-position: center top, center bottom; background-repeat: repeat-x; background-size: 45%;
+}
 .h-introduccion { /* Introduction Section */
     max-width: 90%; max-height: 100vh;     
-    padding: 1em;   
-    border-radius: 10px;
+    padding: 1em; border-radius: 10px;
     display: table; 
     text-align: center;     
-    background-color: #F4F6F7;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    /* background-color: #F4F6F7; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);  */
 }
-/* Intr-Title with effect */
-.h-introduccion .h-title h1 {
+.h-introduccion .h-title h1 { /* Intr-Title with effect */
     text-align: center; font-size: 28px;        
     margin: 5px auto; padding: 0.5rem;  
-    border-radius: 5px;
+    border-radius: 5px; cursor: default;
     display: block;    
     border-right: 4px solid black; /* cursor */
     width: 17ch;
-    white-space:nowrap;
+    white-space: nowrap;
     animation: typing 2s steps(17), blink .5s infinite step-end alternate;
     overflow: hidden;
     background-color: #4B7F83; color: white;
@@ -123,13 +160,13 @@ header, .aboutme, .contactme {
 
 .h-introduccion .h-subtitle h5, #h5-final { /* Intr-Subtitle and Footer */   
     margin: 10px 0 10px 0; 
-    padding: 0.5rem;
+    padding: 0.5rem; cursor: default;
     text-align: left; font-size: 22px;
     border-radius: 5px;   
-    background-color: #6CC6C9; color: white;    
+    background-color: #6CC6C9; color: #F4F6F7;    
 }
 .h-introduccion .content .h-back, .h-front { /* Intr-Divs (back-front) */
-    max-width: 350px;      
+    width: 350px; height: 108px;     
     padding: 0.5rem; margin: 5px;
     z-index: 1;
     border-radius: 5px;
@@ -137,18 +174,15 @@ header, .aboutme, .contactme {
     background-color: #4B7F83; color: white;    
 }
 .h-introduccion .content .h-back:hover, .h-front:hover {
-    transform: translateY(-10px);
-    background-color: #F4F6F7;
-    transition: 0.3s;
+    transform: translateY(-10px); cursor: pointer;
+    background-color: #F4F6F7; border: 1px dotted #6CC6C9;
 } 
 .h-introduccion .content span { /* Intr-Divs Title */      
-    font-size: 20px;
+    font-size: 20px; cursor: default;
     display: table;
     margin: 0 auto;    
     position: relative;
-    transition: 0.4s;
-    transform: translateY(35px);
-    opacity: 1;
+    transition: 0.4s; transform: translateY(35px); opacity: 1;
 }
 .h-introduccion .content .h-back:hover span, .h-front:hover span {
    transform: translateY(0px);  opacity: 0;
@@ -163,22 +197,18 @@ header, .aboutme, .contactme {
     cursor: pointer;    
 }
 .h-introduccion .content .h-back:hover p, .h-front:hover p {
-    transform: translateY(0px);
-	opacity: 1;
+    transform: translateY(0px); opacity: 1;
 }
 .h-introduccion .content .h-image img { /* Intr-Img */
-    height: auto;    
-    padding: 0.5rem;       
-    max-width: 350px;
-    border-radius: 15px;       
+    height: auto; max-width: 350px;
+    border-radius: 5px;       
 }
-/* Intr-Contact Me Button with effect */
-.h-introduccion .btn-h-contact {     
+.h-introduccion .btn-h-contact { /* Intr-Contact Me Button with effect */     
     background-color: #4B7F83; color: white;    
     display: flex;
     align-items: center; justify-content: center;
     border-radius: 5px;
-    margin: 0 auto;
+    margin: 0 auto; width: fit-content;
 }
 .h-introduccion .btn-h-contact:after {
     content: "\f086"; font-family: FontAwesome;
@@ -190,78 +220,85 @@ header, .aboutme, .contactme {
 .h-introduccion .btn-h-contact:is(:hover, :focus)::after {
     width: 24px; margin-left: 8px;
 }
-@media screen and (max-width: 1242px) {
-.h-introduccion .content { flex-flow: column; }
-.h-introduccion .content .h-image {
-    flex-grow: 0; flex-basis: 50%;
-}
-.h-introduccion { width: 100%; }     
-.h-introduccion .h-title h1 { 
-    font-size: 22px; margin-bottom: 5px; 
-} 
-.h-introduccion #h5-final {  font-size: 16px; } 
-.h-introduccion .h-subtitle h5 { font-size: 16px; }
-.h-introduccion .content .h-back, .h-front {
-    padding: 0.2rem; margin: 2px;
-}
-.h-introduccion .content span { font-size: 18px; }
-.h-introduccion .content .h-image img { padding: 0.2rem; }
+
+@media screen and (max-width: 1275px) {
+    header { background-size: 35%; }
+    .h-introduccion .content { flex-flow: column; }
+    .h-introduccion .content .h-image {
+        flex-grow: 0; flex-basis: 50%;
+        border-radius: 5px; 
+    }
+    .h-introduccion { width: 100%; }     
+    .h-introduccion .h-title h1 { 
+        font-size: 22px; margin-bottom: 5px; 
+    }    
+    .h-introduccion #h5-final {  font-size: 16px; } 
+    .h-introduccion .h-subtitle h5 { font-size: 16px; }
+    .h-introduccion .content .h-back, .h-front {
+        padding: 0.2rem; margin: 2px;
+    }
+    .h-introduccion .content .h-back:hover, .h-front:hover {
+        transform: translateY(0px);
+    }
+    .h-introduccion .content span { font-size: 18px; }
+    .h-introduccion .content .h-image img { margin: 3px; }
 }
 
 /* -------------------------------------------------------------- SOBRE MI --------------------------------------------------------------- */
-.aboutme { /* About Me Section */     
-    background-color: lightsalmon; /**/    
+.aboutme {
+    background-image: url(../svg/wave-abtm-down.svg), url(../svg/wave-abtm-up.svg);
+    background-position: center top, center bottom;
+    background-repeat: repeat-x;
+    background-size: 40%;      
 }
 .aboutme .content img { /* Abtme-Img */
     height: auto;    
-    max-width: 425px;
-    border-radius: 15px; margin-bottom: 10px;    
+    max-width: 450px;
+    border-radius: 10px;    
 }
 .abtm-text { /* Abtme-Content Div */
-    max-width: 650px;    
+    width: 750px;    
     padding: 1em;
     border-radius: 10px;
     text-align: center;   
-    background-color: white;  
+    /* background-color: #F4F6F7; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);   */
 }
 .abtm-text h1 { /* Abtme-Content Title */  
     font-size: 25px; 
     display: flex;
     align-items: center; vertical-align: middle; justify-content: center;              
-    padding: 0.3rem;
+    padding: 0.3rem; cursor: default;
     border-radius: 5px;   
     background-color: #4B7F83; color: white;
 }
 .abtm-text h5 { /* Abtme-Content Subtitle */
     font-size: 20px; text-align: center;    
-    margin-bottom: 5px; padding: 0.2rem;    
+    padding: 0.5rem; cursor: default;
     border-radius: 5px;
-    background-color: #6CC6C9; color: whitesmoke;    
+    background-color: #6CC6C9; color: #F4F6F7;    
 }
 .abtm-text p { /* Abtme-Content p */
     font-size: 15px; line-height: 25px; letter-spacing: 1px;
-    margin-bottom: 10px;
+    margin: 10px 0 10px 0;
     text-align: left;
-    color: black;
+    color: black; cursor: default;
 }
 .aboutme .content .abtm-text .abtm-footer { /* Abtme-Content Hobbies Div */    
     width: 100%;    
     text-align: center;
     border-radius: 5px; margin-bottom: 10px;
-    padding: 0.5rem;       
-    background-color: #4B7F83; color: white;
-}
-.aboutme .content .abtm-text .abtm-footer i:hover {
-    color: black;
-    cursor: pointer;
-    transition: 300ms;
+    padding: 0.5rem; cursor: default;      
+    background-color: #6CC6C9; color: #F4F6F7;
 }
 .aboutme .content .abtm-text .abtm-footer h6 { /* Abtme-Content Hobbies Title */
-    font-size: 15px; text-align: center;   
+    font-size: 15px; text-align: center;
 }
-/* Abtme-Content CV Button with effect */
-.aboutme .content .abtm-text .btnCV {
-    width: 100%; 
+.aboutme .content .abtm-text .abtm-footer i:hover {
+    transform: translateY(-3px); color: black;    
+    cursor: pointer; transition: 0.4s;
+}
+.aboutme .content .abtm-text .btnCV { /* Abtme-Content CV Button with effect */
+    width: 100%;
     background-color: #4B7F83; color: white;
     display: flex;
     align-items: center; justify-content: center;
@@ -278,14 +315,15 @@ header, .aboutme, .contactme {
  }
 
 @media screen and (max-width: 1180px) {
-    .aboutme, .contactme {
+    .aboutme {
         width: 100%; height: auto;
         padding: 50px 0px;
-    }    
+        background-size: 30%;
+    } 
+    .aboutme .content img { max-width: 425px;  margin: 0 0 15px 0; }   
 }
 @media screen and (max-width: 650px) {
-    .abtm-text { width: 100%; }
-    .aboutme .content img { max-width: 385px;  margin: 10px 0 10px 0; }    
+    .abtm-text { width: 100%; }        
     .abtm-text h1 { font-size: 20px; margin-bottom: 5px; }     
     .abtm-text h5 {
         font-size: 15px; text-align: center;
@@ -296,29 +334,26 @@ header, .aboutme, .contactme {
 }
 
 /* ------------------------------------------------------------------ PORTAFOLIO ---------------------------------------------------------- */
-.portafolio { /* Portafolio Section */ 	
-    background-color: goldenrod;
-} 
+
 .portafolio .p-cards-container {
     display: flex; flex-wrap: wrap;
 	justify-content: space-around; align-items: center; align-content: center; 	    
     gap: 15px;  padding: 1rem; border-radius: 5px;
     z-index: 1;
-    background-color: #F4F6F7;
+    /* background-color: #F4F6F7; */
 }
 .portafolio .p-card { /* Portafolio-Card Divs */		
     min-width: 350px; height: 400px;		
-	border-radius: 10px;
-    padding: 1em;
+	border-radius: 10px; padding: 1em;
     position: relative; 
     display: flex;
     align-items: center; justify-content: space-between;
     width: calc(100% * (1/3) - 50px - 1px);	   	
-    background-color: white;
-	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);  
+    background-color: #F4F6F7; border: 2px solid #4B7F83;
+	/* box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);   */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     flex-direction: column;    
 	transition: 0.4s;
-    border: 2px solid #4B7F83; 
 }
 .portafolio .p-card:hover  { 
     transform: translateY(8px);
@@ -328,20 +363,19 @@ header, .aboutme, .contactme {
     display: table; text-align: center;   
     width: 100%;
     padding: 0.5rem; border-radius: 5px; 
-    margin-bottom: 5px; cursor: default; 
+    cursor: default; 
     background-color: #4B7F83; color: white; 
 }
 .portafolio .p-card .content .contentBx h3 { 	
     display: table-cell;    
-    text-transform: uppercase; 
-    letter-spacing: 1px; font-weight: 500; 
+    text-transform: uppercase; line-height: 16px;
+    letter-spacing: 0.3px; font-weight: 500; 
     font-size: 12px;
 }
 #p-img .img-item { /* Portafolio-Cards Img */ 
     position: relative;
 	width: 300px; height: 200px;
-	overflow: hidden;  
-    margin: 5px;
+	overflow: hidden; margin: 5px 0 5px 0;
 }
 #p-img img {
     position: absolute;	
@@ -349,25 +383,22 @@ header, .aboutme, .contactme {
     border-radius: 5px;
     cursor: pointer;
     object-fit: cover;
-    background-color: white;
-    border: 2px solid #4B7F83;
+    background-color: white; border: 2px solid #4B7F83;
 }
 .portafolio .p-card .content .t-icons { /* Portafolio-Cards Tech-Icons Div */    
     width: 100%;
-    border-radius: 5px; margin: 2px 0 5px 0;
+    border-radius: 5px; margin: 5px 0 5px 0;
     z-index: 1;
     cursor: pointer;
     transition: 0.4s; 
-    background-color: #6CC6C9; color: whitesmoke;    
+    background-color: #6CC6C9; color: #F4F6F7;    
 }
 .portafolio .p-card .content .t-icons:hover {
-    background-color: white;
-    border: 1px dotted #6CC6C9;      
+    background-color: #F4F6F7; border: 1px dotted #6CC6C9;      
 }
 .portafolio .p-card .content .t-icons span { /* Portafolio-Cards Tech-Icons Title*/
     font-size: 15px;
-    display: table;    
-    margin: 0 auto;      
+    display: table; margin: 0 auto;      
     position: relative;
     transition: 0.4s; transform: translateY(-20px);
     opacity: 1;
@@ -379,7 +410,7 @@ header, .aboutme, .contactme {
     display: flex;              
     justify-content: center;      
     padding: 0.2rem;    
-    margin: 0;  opacity: 0;       
+    margin: 0; opacity: 0;       
 }
 .portafolio .p-card .content .t-icons:hover .p-tecnologies {
      opacity: 1; transform: translateY(10px);
@@ -398,7 +429,7 @@ header, .aboutme, .contactme {
     width: 35px; height: 35px;
     padding: 0; border: 0; margin: 0;
 }
-.p-tec-tooltip .tooltip-inner { /* Portafolio-Cards Tech-Icons icons Tooltip */  
+.p-tec-tooltip .tooltip-inner, .p-icons-a .tooltip-inner { /* Portafolio-Cards Tech-Icons icons Tooltip */  
     font-size: 12px; text-align: center;
     background-color: #324B4D; color: white; 
     border-radius: 5px; padding: 0.5rem;
@@ -444,10 +475,9 @@ header, .aboutme, .contactme {
 }
 #imgPopUpModal .modal-header, .modal-footer {    
     display: table;
-    text-align: center;        
-    font-size: 14px;
+    text-align: center;  
     border-radius: 5px;
-    margin: 0; padding: 0.5rem;
+    margin: 0;
     position: relative;
 }
 #imgPopUpModal .modal-header {    
@@ -455,13 +485,14 @@ header, .aboutme, .contactme {
 }
 #imgPopUpModal .modal-header h6 { /* Modal Title */
     display: table-cell;  
-    width: 100%;    
+    width: 100%; 
+    font-size: 12px; line-height: 15px;
 }
 .modal-header .btn-close { /* Modal Close Button */
-    margin: 1px; top:0; right: 0;   
+    margin: 5px; bottom: 0; right: 0; /* bottom: 0; */  
     position: absolute;
     background-color: transparent;
-    opacity: 1; transition: 400ms;       
+    transition: 400ms; opacity: 1;      
   }
 .modal-header .btn-close:hover {
     background-color: white;
@@ -473,11 +504,8 @@ header, .aboutme, .contactme {
     background-color: #F4F6F7;
     cursor: zoom-in;
 }
-#imgPopUpModal .img-modal, .modal-footer p {
-    width: 100%;       
-}
 .modal-content span { /* Modal Instructions */
-    padding: 0.2rem; margin-top: 5px; border: 0;
+    padding: 0.2rem; margin-top: 10px; border: 0;
     font-size: 12px;
     text-align: center;     
     border-bottom: 2px dotted #4B7F83; border-top: 2px dotted #4B7F83;
@@ -509,6 +537,10 @@ header, .aboutme, .contactme {
     background-color: #6CC6C9; color: whitesmoke;
     border-top: 2px solid #4B7F83;
 }
+#imgPopUpModal .img-modal, .modal-footer p {
+    width: 100%; 
+    font-size: 12px;       
+}
 
 @media screen and (max-width: 980px) {
     #imgPopUpModal .modal-header h6, .modal-footer { font-size: 12px; }
@@ -518,14 +550,12 @@ header, .aboutme, .contactme {
 }
 
 /* ----------------------------------------------------------- CONTÁCTAME --------------------------------------------------------------- */  
-.contactme { /* Contact Section */     
-    background-color: orchid; /* *** */     
-}
+
 .contact-form { /* Contact-Form Div*/  
     width: 600px; 
     border-radius: 10px;
     padding: 1em;
-    background-color: white; /**/
+    background-color: #F4F6F7; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 .contact-form h1 { /* Contact-Form Div Title */    
     text-align: center; font-size: 25px;
@@ -561,33 +591,23 @@ header, .aboutme, .contactme {
 .contact-form #btnSendEmail:is(:hover, :focus)::after {
     width: 24px; margin-left: 8px;
 }
-.contactme .content .icons {  /* Contact-Icons Div */     
-    border-radius: 5px; padding: 1em;
-    background-color: white;    
-}  
+.contactme .content .icons {  /* Contact-Icons Div */
+    border-radius: 10px; padding: 1em;
+    background-color: #F4F6F7; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);   
+} 
 .contactme .content .icons h4 {
     font-size: 13px;
     background-color: #4B7F83; color: white;
     padding: 0.5rem; border-radius: 5px;
     text-align: center;
 }
-@media screen and (max-width: 1014px) {           
+.contactme .content .icons p { text-align: center; }
+
+@media screen and (max-width: 1014px) {  
+    .contact-form { width: 100%; }         
     .contact-form h1 { font-size: 20px; margin-bottom: 5px; }
     #c-form label, #c-form input, #c-form textarea { font-size: 12px; } 
     .contact-form #emailHelp { font-size: 8px; padding-bottom: 1.2rem; }
-    .contactme .icons { margin: 5px; }
+    .contactme .icons { margin-top: 10px; }
     .contactme .icons p { font-size: 12px; }
 }
-
-/* -------------------------------------------------------------- FOOTER --------------------------------------------------------------- */
-  footer {
-      height: 10vh;
-      text-align: center;
-      justify-content: center;
-      background-color: red;
-  }
-  
-/* Footer */
-.footer-text {
-    text-align: center;
-  }

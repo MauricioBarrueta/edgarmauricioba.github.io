@@ -53,17 +53,20 @@
   transition: 0.4s; opacity: 0;
 }
 @media screen and (max-width: 800px) {
-  .skills-cards .card-skills { width: calc(100% * (1/5) - 10px - 1px); } 
+  .skills-cards .card-skills { width: calc(100% * (1/6) - 10px - 1px); } 
   .card-skills { width: 90px; height: 90px; }
   .card-skills .info-skills .progress-bar { font-size: 9px; }
   .card-skills img { width: 85px; height: 85px; } 
 }
+@media screen and (max-width: 650px) {
+  .skills-cards .card-skills { width: calc(100% * (1/4) - 20px - 1px); } 
+  .card-skills { width: 80px; height: 80px; }
+  .card-skills img { width: 70px; height: 70px; }
+  
+}
 /* Custom ToolTips*/
-.tooltip-success { --bs-tooltip-bg: var(--bs-success); } /*v*/
-/* .card-skills.tooltip-warning[title]:hover:after {
-  content: attr(title); 
-  color: black; 
-} */
-.tooltip-warning { --bs-tooltip-bg: var(--bs-warning); } /*a*/
-.tooltip-danger {  --bs-tooltip-bg: var(--bs-danger); } /*r*/
+.tooltip-success { --bs-tooltip-bg: var(--bs-success); } 
+.tooltip-warning { --bs-tooltip-bg: var(--bs-warning); }
+.tooltip-warning .tooltip-inner { color: black; }
+.tooltip-danger {  --bs-tooltip-bg: var(--bs-danger); } 
 

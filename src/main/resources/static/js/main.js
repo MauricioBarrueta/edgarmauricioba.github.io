@@ -6,10 +6,19 @@ btnSTT.addEventListener('click', function() {
         behavior: "smooth"
     });
 });
-/* Hace visible el bóton al iniciar el scroll descendente */
+/* Hace visible el bóton al iniciar el scroll */
 window.addEventListener('scroll', e => {
     btnSTT.style.display = window.scrollY > 150 ? 'block' : 'none';    
-});  
+}); 
+
+/* Para dar el efecto 'sticky' a la navbar al pasar por el elemento oculto span con clase .trigger */
+(new IntersectionObserver(function(e,o){
+    if (e[0].intersectionRatio > 0){
+        document.documentElement.removeAttribute('class');
+    } else {
+        document.documentElement.setAttribute('class','stuck');
+    };
+})).observe(document.querySelector('.trigger'));
 
 /* Resalta en la navbar la sección en la que se encuentra */
 $(document).ready(function () {
@@ -27,7 +36,7 @@ document.addEventListener("click", function(e) {
         document.querySelector('.img-modal').src = src; 
         const myModal = new bootstrap.Modal(document.getElementById('imgPopUpModal'));        
         $("#imgPopUpModal p").text($(e.target).attr('alt')); /* Se pasa el valor de 'alt' de la imagen al elemento <p> */
-        $("#imgPopUpModal h6").text($(e.target).attr('title')); /* Se pasa el valor de 'title' de la imagen al elemento <h6> */
+        $("#imgPopUpModal h6").text($(e.target).attr('data-title')); /* Se pasa el valor de 'title' de la imagen al elemento <h6> */
         myModal.show();
      }     
 });
@@ -53,8 +62,7 @@ function onSubmit(event) {
     const form = new FormData(this)
 
     const btnSendEmail = $('#btnSendEmail')
-    const btnHtmlElements = btnSendEmail.html() // Almacena las caracteristicas del botón
-    
+    const btnHtmlElements = btnSendEmail.html() // Almacena las caracteristicas del botón    
     $(btnSendEmail).html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>&nbsp; Procesando...').prop('disabled', true)
     
     /* Función que agrega un spinner antes de completar el envío del formulario */
@@ -66,10 +74,41 @@ function onSubmit(event) {
     4000) // 4 segundos
 }
 
-(new IntersectionObserver(function(e,o){
-    if (e[0].intersectionRatio > 0){
-        document.documentElement.removeAttribute('class');
-    } else {
-        document.documentElement.setAttribute('class','stuck');
-    };
-})).observe(document.querySelector('.trigger'));
+/* Footer con efecto 'Parallax' */
+$(document).ready(function() {
+  siteFooter();	
+	$(window).resize(function() {
+		siteFooter();
+	});	
+	function siteFooter() {
+		var siteContent = $('.main');
+		var siteFooter = $('#footer');
+		var siteFooterHeight = siteFooter.height();
+
+		siteContent.css({
+			"margin-bottom" : siteFooterHeight + 50
+		});
+	};
+});
+
+function modalSpinner(){
+    $('.modalSpinner').modal('show');
+    setTimeout(function () {        
+        $('.modalSpinner').modal('hide');
+    }, 3000);
+ }
+
+function switchLang(lang) {
+    $("[data-" + lang + "]").text(function(i, e) {
+        return $(this).data(lang);
+    });
+}
+switchLang("es");
+
+$(".switchlang").click(function() {
+    modalSpinner();  
+    switchLang($(this).data("lang"))
+    
+        
+});
+

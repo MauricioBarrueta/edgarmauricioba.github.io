@@ -27,46 +27,64 @@
   <!-- Navbar  -->  
   <!--<nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" th:fragment="navbar"> -->  
   <nav id="navbar" class="navbar sticky-top navbar-expand-lg navbar-dark" th:fragment="navbar">  
-    <div class="container-fluid">      
+    <div class="container-fluid">  
+      <a class="navbar-brand navbar-right">
+        <button class='switchlang' data-lang="es"><img th:src="@{/svg/mx.svg}" alt="Español" loading="lazy"></button>
+        <button class='switchlang' data-lang="en"><img th:src="@{/svg/us.svg}" alt="English" loading="lazy"></button>
+      </a>    
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button>
+      </button>      
       <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
-        <ul class="navbar-nav">
+        <ul class="nav nav-tabs"> <!--navbar-nav-->
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="http://localhost:8080/portafolio#h-introduccion">Inicio</a>
+            <a class="nav-link active" aria-current="page" href="#h-introduccion">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="http://localhost:8080/portafolio#aboutme">Sobre mí</a>
+            <a class="nav-link" aria-current="page" href="#aboutme">Sobre mí</a>
           </li>            
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="http://localhost:8080/portafolio#portafolio">Portafolio</a>
+            <a class="nav-link" aria-current="page" href="#portafolio">Portafolio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="http://localhost:8080/portafolio#skills-cards">Habilidades</a>
+            <a class="nav-link" aria-current="page" href="#skills-cards">Habilidades</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="http://localhost:8080/portafolio#contactme">Contáctame</a>
+            <a class="nav-link" aria-current="page" href="#contactme">Contáctame</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
+  <div class="modalSpinner modal fade" tabindex="-1" role="dialog" id="spinnerModal" th:fragment="modalSpinner">
+    <div class="modal-dialog modal-dialog-centered mod-spinner text-center modal-xl" role="document">
+        <span><i class="fa-solid fa-sync fa-spin fa-8x"></i></span>
+    </div>
+</div>
+  <!-- <div class="modalSpinner fade bd-example-modal-lg" data-backdrop="static" data-keyboard="false" tabindex="-1" >
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+    </div>
+</div> -->
 
   <!-- Portafolio -->   
-  <section class="portafolio" id="portafolio" th:fragment="portafolio" data-aos="fade-up"> 
-    <h3 class="sectionTitles">Portafolio</h3>
+  <section class="portafolio" id="portafolio" th:fragment="portafolio" data-aos="fade-up">  
+    <h3 class="sectionTitles" data-es="Portafolio" data-en="Portfolio"></h3>  
     <div class="p-cards-container">
       <div class="p-card"> <!-- Memorama --> 
-        <div class="content">
-          <div class="contentBx">
-            <h3>Juego Memorama</h3>
-          </div>
+        <div class="content">         
           <div id="p-img">
-            <img th:src="@{/img/Portafolio/Memorama.png}" class="img-item" alt="Hecho con Java, su librería gráfica Java Swing y NetBeans IDE" 
-            title="Juego Memorama con temática de guitarristas" loading="lazy">
-          </div>   
+            <img th:src="@{/img/Portafolio/Memorama.png}" class="img-item" alt="Hecho con Java, la librería gráfica Java Swing y NetBeans IDE" 
+            data-title="Juego Memorama con temática de guitarristas" loading="lazy">
+          </div>  
+          <div class="contentBx">
+            <h3 data-es="Juego Memorama" data-en="Concentration Game"></h3>
+          </div> 
           <div class="t-icons"> <!-- Tecnologías -->
             <ul class="p-tecnologies">            
               <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip"
@@ -77,7 +95,7 @@
                 <i><img th:src="@{/svg/NetBeans.svg}" class="p-tec-svg-icons"></i>
               </li>
             </ul>
-            <span>Tecnologías</span>      
+            <span data-es="Tecnologías" data-en="Technologies"></span>      
           </div>
         </div> 
         <ul class="p-icons"> <!-- iconos -->        
@@ -88,13 +106,13 @@
       </div>
   
       <div class="p-card"> <!-- Buscaminas -->      
-        <div class="content">
-          <div class="contentBx">
-            <h3>Juego Buscaminas</h3>
-          </div>
+        <div class="content">          
           <div id="p-img">        
             <img th:src="@{/img/Portafolio/Buscaminas.png}" class="img-item" alt="Hecho con Java, la librería gráfica Java Swing y NetBeans IDE"
-            title="Juego Buscaminas clásico">
+            data-title="Juego Buscaminas clásico">
+          </div>
+          <div class="contentBx">
+            <h3 data-es="Juego Buscaminas" data-en="Minesweeper Game"></h3>
           </div>
           <div class="t-icons">
             <ul class="p-tecnologies"> <!-- Tecnologías -->          
@@ -105,7 +123,7 @@
                 <i><img th:src="@{/svg/NetBeans.svg}" class="p-tec-svg-icons"></i>
               </li>
             </ul>
-            <span>Tecnologías</span>
+            <span data-es="Tecnologías" data-en="Technologies"></span> 
           </div>        
         </div>
         <ul class="p-icons"> <!-- iconos -->        
@@ -116,15 +134,16 @@
       </div>      
   
       <div class="p-card"> <!-- Proyecto Full-Stack -->      
-        <div class="content">
-          <div class="contentBx">
-            <h3>Práctica de una API RESTful 'Full-Stack'</h3>
-          </div>
+        <div class="content">          
           <div id="p-img">
-            <img th:src="@{/img/Portafolio/Fullstack.png}" class="img-item" alt="Back end: Java, TypeScript y Spring Framework
-              -  Front end: Angular, HTML, CSS y Bootstrap  -  Base de Datos MySQL"
-            title="Práctica de funciones CRUD de una API RESTful">
-          </div>      
+            <img th:src="@{/img/Portafolio/Fullstack.png}" class="img-item" alt="Back end: Java, TypeScript y Spring Framework 
+            (Spring Web, Spring Data JPA)  -  Front end: Angular, HTML, CSS y Bootstrap  -  Servidor: Base de Datos SQL"
+            data-title="Práctica de una API RESTful con las funciones CRUD hecho con, a grandes rasgos, el framework Spring para el Back end
+             y el framework Angular para el Front end">
+          </div>  
+          <div class="contentBx">
+            <h3 data-es="API RESTful - Proyecto 'Full-Stack'" data-en="'Full-Stack' API RESTful Project"></h3>
+          </div>    
           <div class="t-icons"> <!-- Tecnologías --> 
             <ul class="p-tecnologies">         
               <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="Java">
@@ -148,38 +167,40 @@
               <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="Bootstrap">
                 <i><img th:src="@{/svg/Bootstrap.svg}" class="p-tec-svg-icons"></i>
               </li>
-              <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="MySQL">
+              <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="SQL">
                 <i><img th:src="@{/svg/MySQL.svg}" class="p-tec-svg-icons"></i>
               </li>   
             </ul>
-             <span>Tecnologías</span>
+            <span data-es="Tecnologías" data-en="Technologies"></span> 
           </div>        
         </div>
         <ul class="p-icons"> <!-- iconos -->     
           <li>
-            <a href="" data-bs-toggle="tooltip" data-bs-placement="left" title="Sitio Web"><i
+            <a href="" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Sitio Web" style="visibility: hidden;"><i
                 class="fa-solid fa-globe fa-fw fa-lg"></i></a>
           </li>
           <li>
             <span>2022</span>
           </li>
           <li>
-            <a href="" data-bs-toggle="tooltip" data-bs-placement="right" title="Código"><i
+            <a href="" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-custom-class="p-icons-a" title="Ver código"><i
                 class="fa-brands fa-github fa-fw fa-lg"></i></a>
           </li>
         </ul>
       </div>
   
       <div class="p-card"> <!-- Proyecto Sistema escuela -->      
-        <div class="content">
-          <div class="contentBx">
-            <h3>Sistema de control para el personal escolar</h3>
-          </div>
+        <div class="content">          
           <div id="p-img">
             <img th:src="@{/img/Portafolio/Sistema Escuela.png}" class="img-item" alt="Back end: PHP  -  
-            Front end: HTML, CSS, JavaScript (jQuery / AJAX) y Bootstrap  -  Base de Datos MySQL"
-            title="Sistema de control de los horarios y días de descanso de todo el personal escolar">
-          </div>        
+            Front end: HTML, CSS, JavaScript (jQuery / AJAX) y Bootstrap  -  La librería TCPDF de PHP para la creación de ficheros
+            -  Servidor: Base de Datos SQL"
+            data-title="Sistema de control de los horarios de entrada / salida y días de descanso de todo el personal escolar de la universidad, 
+            además de las funciones CRUD y la generación de reportes en formato PDF">
+          </div> 
+          <div class="contentBx">
+            <h3 data-es="Sistema de control del personal escolar" data-en="School Staff Control System"></h3>
+          </div>       
           <div class="t-icons"> <!-- Tecnologías -->
             <ul class="p-tecnologies">          
               <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="PHP">
@@ -203,11 +224,11 @@
               <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="Bootstrap">
                 <i><img th:src="@{/svg/Bootstrap.svg}" class="p-tec-svg-icons"></i>
               </li>         
-              <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="MySQL">
+              <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="SQL">
                 <i><img th:src="@{/svg/MySQL.svg}" class="p-tec-svg-icons"></i>
               </li>  
             </ul>
-            <span>Tecnologías</span>
+            <span data-es="Tecnologías" data-en="Technologies"></span> 
           </div>        
         </div>
         <ul class="p-icons"> <!-- iconos -->     
@@ -218,15 +239,16 @@
       </div>
   
       <div class="p-card"> <!-- Proyecto Red Social Egresados -->      
-        <div class="content">
-          <div class="contentBx">
-            <h3>Red Social de búsqueda de empleo</h3>
-          </div>
+        <div class="content">          
           <div id="p-img">
-            <img th:src="@{/img/Portafolio/RedSocialEgresados.png}" class="img-item" alt="Back end: PHP  -  
-            Front end: HTML, CSS, JavaScript (jQuery / AJAX) y Bootstrap  -  Base de Datos MySQL"
-            title="Sistema de control de horarios y días de descanso de los docentes y personal administrativo" loading="lazy">
-          </div>       
+            <img th:src="@{/img/Portafolio/RedSocialEgresados.png}" class="img-item" alt="Back end: PHP  -  Front end: HTML, CSS, JavaScript 
+            (jQuery / AJAX) y Bootstrap  -  Servidor: Base de Datos MySQL" data-title="Red social para la interacción entre recién egresados 
+            y empresas en busca de vacantes, permite realizar publicaciones, solicitudes de amistad, postulaciones y cuenta con un chat 
+            para la comunicación entre ambas partes, ademas de las funciones CRUD" loading="lazy">
+          </div> 
+          <div class="contentBx">
+            <h3 data-es="Red Social para recién egresados" data-en="Social Network for graduates"></h3>
+          </div>      
           <div class="t-icons"> <!-- Tecnologías --> 
             <ul class="p-tecnologies">         
               <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="PHP">
@@ -250,11 +272,11 @@
               <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="Bootstrap">
                 <i><img th:src="@{/svg/Bootstrap.svg}" class="p-tec-svg-icons"></i>
               </li>         
-              <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="MySQL">
+              <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="SQL">
                 <i><img th:src="@{/svg/MySQL.svg}" class="p-tec-svg-icons"></i>
               </li>  
             </ul>
-            <span>Tecnologías</span>
+            <span data-es="Tecnologías" data-en="Technologies"></span> 
           </div>        
         </div>
         <ul class="p-icons"> <!-- iconos -->     
@@ -265,14 +287,14 @@
       </div>
   
       <div class="p-card"> <!-- Proyecto Angular puro -->      
-        <div class="content">
-          <div class="contentBx">
-            <h3>Práctica de un sistema de compras con carrito</h3>
-          </div>
+        <div class="content">          
           <div id="p-img">
             <img th:src="@{/img/Portafolio/Sistema Angular.png}" class="img-item" alt="Backend: TypeScript  -  Front end: Angular, HTML, 
-            CSS  -  Servidor JSON Server (NPM) "
-            title="Práctica de un sistema de compras con carrito">
+            CSS  -  Servidor: JSON Server (NPM) "
+            data-title="Práctica de un sistema 'e-commerce' el cual simula la compra de uno o varios productos por carrito de compras">
+          </div>
+          <div class="contentBx">
+            <h3 data-es="Sistema de compras por carrito (e-commerce)" data-en="e-commerce system with shopping cart"></h3>
           </div>        
           <div class="t-icons"> <!-- Tecnologías -->
             <ul class="p-tecnologies"> 
@@ -295,72 +317,79 @@
                 <i><img th:src="@{/svg/npm.svg}" class="p-tec-svg-icons" style="padding-top: 0.8rem;"></i>
               </li>              
             </ul>
-            <span>Tecnologías</span>
+            <span data-es="Tecnologías" data-en="Technologies"></span> 
           </div>        
         </div>
         <ul class="p-icons"> <!-- iconos -->     
           <li>
-            <a href="" data-bs-toggle="tooltip" data-bs-placement="left" title="Sitio Web"><i
+            <a href="" data-bs-toggle="tooltip" data-bs-placement="left" title="Sitio Web" style="visibility: hidden;"><i
                 class="fa-solid fa-globe fa-fw fa-lg"></i></a>
           </li>
           <li>
             <span>2022</span>
           </li>
           <li>
-            <a href="" data-bs-toggle="tooltip" data-bs-placement="right" title="Código"><i
+            <a href="" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-custom-class="p-icons-a" title="Ver código"><i
                 class="fa-brands fa-github fa-fw fa-lg"></i></a>
           </li>
         </ul>
       </div> 
 
       <div class="p-card"> <!-- Proyecto GFR --> 
-        <div class="content">
-          <div class="contentBx">
-            <h3>Sistema para el control del almacén</h3>
-          </div>
+        <div class="content">          
           <div id="p-img">
-            <img th:src="@{/img/Portafolio/Proyecto GFR.png}" class="img-item" alt=" Hecho con Java, su librería gráfica Java Swing, 
-             entre otras, la librería JasperReports para la creación de reportes y NetBeans IDE  -  Base de Datos MySQL" 
-             title="Sistema para el control del almacén de herramientas (entradas y salidas)" loading="lazy">
-          </div>   
+            <img th:src="@{/img/Portafolio/Proyecto GFR.png}" class="img-item" alt=" Hecho con Java, la librería gráfica Java Swing, 
+             entre otras, la librería JasperReports para la creación de reportes y NetBeans IDE  -  Servidor: Base de Datos SQL" 
+             data-title="Sistema para el control del almacén de herramientas, así como también de las entradas y salidas de estas" loading="lazy">
+          </div> 
+          <div class="contentBx">
+            <h3 data-es="Sistema para el control de un almacén" data-en="Tools Warehouse Control System"></h3>
+          </div>  
           <div class="t-icons"> <!-- Tecnologías -->
             <ul class="p-tecnologies">            
-              <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip"
-                title="Java / Java Swing">
+              <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="Java / Java Swing">
                 <i><img th:src="@{/svg/Java.svg}" class="p-tec-svg-icons"></i>
               </li>
-              <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip"
-                title="JasperReports">
+              <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="JasperReports">
                 <i><img th:src="@{/svg/JasperReports.svg}" class="p-tec-svg-icons" loading="lazy"></i>
               </li>             
               <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="NetBeans IDE">
                 <i><img th:src="@{/svg/NetBeans.svg}" class="p-tec-svg-icons"></i>
               </li>
-              <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="MySQL">
+              <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="SQL">
                 <i><img th:src="@{/svg/MySQL.svg}" class="p-tec-svg-icons"></i>
               </li>
             </ul>
-            <span>Tecnologías</span>      
+            <span data-es="Tecnologías" data-en="Technologies"></span>       
           </div>
         </div> 
-        <ul class="p-icons"> <!-- iconos -->        
+        <ul class="p-icons"> <!-- iconos -->    
+          <li>
+            <a href="" data-bs-toggle="tooltip" data-bs-placement="left" title="Sitio Web" style="visibility: hidden;"><i
+                class="fa-solid fa-globe fa-fw fa-lg"></i></a>
+          </li>    
           <li>
             <span>2018</span>
+          </li>
+          <li>
+            <a href="" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-custom-class="p-icons-a" title="Ver código"><i
+                class="fa-brands fa-github fa-fw fa-lg"></i></a>
           </li>
         </ul>
       </div>
 
       <div class="p-card"> <!-- Sistema Administrador de Usuarios -->      
-        <div class="content">
-          <div class="contentBx">
-            <h3>Sistema administrador de usuarios</h3>
-          </div>
+        <div class="content">          
           <div id="p-img">
-            <img th:src="@{/img/Portafolio/Adminusuarios.png}" class="img-item" alt="Back end: Java y Spring Framework  -  
-            Front end: Thymeleaf, HTML, CSS, JavaScript (jQuery / AJAX) y Bootstrap  -  Servidor remoto base de datos SQL  -  
-            Control de versiones con GitLab"
-            title="Sistema para la administración de los usuarios de todas las aplicaciónes disponibles de un banco">
-          </div>      
+            <img th:src="@{/img/Portafolio/Adminusuarios.png}" class="img-item" alt="Back end: Java y Spring Framework (Spring Web, 
+            Spring Security, Spring Data JPA, Thymeleaf, Spring Testing)  -  Front end: HTML, CSS, JavaScript (jQuery / AJAX) 
+            y Bootstrap  -  Servidor remoto: Base de Datos PostgreSQL  -  Control de versiones con GitLab"
+            data-title="Sistema que permite la administración de todos los usuarios registrados en las diferentes aplicaciónes pertenecientes
+            a un banco">
+          </div> 
+          <div class="contentBx">
+            <h3 data-es="Sistema administrador de usuarios" data-en="Users Management System"></h3>
+          </div>     
           <div class="t-icons"> <!-- Tecnologías --> 
             <ul class="p-tecnologies">         
               <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="Java">
@@ -384,14 +413,14 @@
               <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="Bootstrap">
                 <i><img th:src="@{/svg/Bootstrap.svg}" class="p-tec-svg-icons"></i>
               </li>
-              <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="SQL">
-                <i><img th:src="@{/svg/MySQL.svg}" class="p-tec-svg-icons"></i>
+              <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="PostgreSQL">
+                <i><img th:src="@{/svg/PostgreSQL.svg}" class="p-tec-svg-icons"></i>
               </li>  
               <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="GitLab">
                 <i><img th:src="@{/svg/GitLab.svg}" class="p-tec-svg-icons" style="padding-top: 0.5rem;"></i>
               </li> 
             </ul>
-             <span>Tecnologías</span>
+            <span data-es="Tecnologías" data-en="Technologies"></span> 
           </div>        
         </div>
         <ul class="p-icons"> <!-- iconos -->     
@@ -401,68 +430,118 @@
         </ul>
       </div>
 
-      <div class="p-card"> <!-- App Huevos --> 
+      <div class="p-card"> <!-- API RESTful con JSON Web Token -->      
         <div class="content">
-          <div class="contentBx">
-            <h3>App de control de gallinas ponedoras</h3>
-          </div>
           <div id="p-img">
-            <img th:src="@{/img/Portafolio/App-Control-Huevos.jpg}" class="img-item" alt="Hecho en Android Studio con el lenguaje
-              Java y el metalenguaje XML para el diseño  -  Servidor en Google Firebase" 
-              title="Aplicación para llevar un control del número de huevos recogidos y total de alimento y dinero gastados" loading="lazy">
-          </div>   
+            <img th:src="@{/img/Portafolio/API REST JWT.png}" class="img-item" alt="Back end: Java y Spring Framework
+            (Spring Web, Spring Data JPA, Spring Security, Hibernate Validation) -  Estandar de autenticación JSON Web Token (JWT)  -   
+            Servidor: Base de Datos SQL  -  Herramienta Postman para probar la API"
+            data-title="API que simula el inicio de sesión, realización de publicaciones y de comentarios, además de las funciones CRUD
+            a partir de una autenticación por medio de un token exclusivo para cada usuario, además de que cada función requiere de un rol
+            específico (admin / usuario) para poder realizarse">
+          </div> 
+          <div class="contentBx">
+            <h3 data-es="API RESTful con autenticación por Token" data-en="Token Authentication API RESTful"></h3>
+          </div>     
+          <div class="t-icons"> <!-- Tecnologías --> 
+            <ul class="p-tecnologies">         
+              <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="Java">
+                <i><img th:src="@{/svg/Java.svg}" class="p-tec-svg-icons"></i>
+              </li>  
+              <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="Spring Framework">
+                <i><img th:src="@{/svg/Spring.svg}" class="p-tec-svg-icons"></i>
+              </li>
+              <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="JSON Web Token (JWT)">
+                <i><img th:src="@{/svg/JWT.svg}" class="p-tec-svg-icons"></i>
+              </li>
+              <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="SQL">
+                <i><img th:src="@{/svg/MySQL.svg}" class="p-tec-svg-icons"></i>
+              </li>  
+              <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="Postman">
+                <i><img th:src="@{/svg/Postman.svg}" class="p-tec-svg-icons" style="padding-top: 0.5rem;"></i>
+              </li> 
+            </ul>
+            <span data-es="Tecnologías" data-en="Technologies"></span> 
+          </div>        
+        </div>
+        <ul class="p-icons"> <!-- iconos -->     
+          <li>
+            <a href="" data-bs-toggle="tooltip" data-bs-placement="left" title="Sitio Web" style="visibility: hidden;"><i
+                class="fa-solid fa-globe fa-fw fa-lg"></i></a>
+          </li>    
+          <li>
+            <span>2021</span>
+          </li>
+          <li>
+            <a href="" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-custom-class="p-icons-a" title="Ver código"><i
+                class="fa-brands fa-github fa-fw fa-lg"></i></a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="p-card"> <!-- App Huevos --> 
+        <div class="content">          
+          <div id="p-img">
+            <img th:src="@{/img/Portafolio/App-Control-Huevos.jpg}" class="img-item" alt="Hecho con Java, el metalenguaje XML para el diseño
+            y el Entorno de Desarrollado Integrado Android Studio  -  Servidor: Google Firebase" 
+              data-title="Aplicación que sirve para llevar un control del número de huevos recogidos y total de alimento y dinero gastados
+              de una pequeña granja de gallinas ponedoras de huevos" loading="lazy">
+          </div>  
+          <div class="contentBx">
+            <h3 data-es="App para mini granja de gallinas ponedoras" data-en="App for Laying Hens Farm"></h3>
+          </div> 
           <div class="t-icons"> <!-- Tecnologías -->
             <ul class="p-tecnologies">            
-              <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip"
-                title="Java">
+              <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="Java">
                 <i><img th:src="@{/svg/Java.svg}" class="p-tec-svg-icons"></i>
               </li>
-              <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip"
-                title="XML">
+              <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="XML">
                 <i><img th:src="@{/svg/XML.svg}" class="p-tec-svg-icons"></i>
               </li>             
               <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="Android Studio">
                 <i><img th:src="@{/svg/Android Studio.svg}" class="p-tec-svg-icons"></i>
               </li> 
+              <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="Gradle">
+                <i><img th:src="@{/svg/Gradle.svg}" class="p-tec-svg-icons"></i>
+              </li> 
               <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="Firebase">
                 <i><img th:src="@{/svg/Firebase.svg}" class="p-tec-svg-icons"></i>
               </li>
             </ul>
-            <span>Tecnologías</span>      
+            <span data-es="Tecnologías" data-en="Technologies"></span>       
           </div>
         </div> 
         <ul class="p-icons"> <!-- iconos -->        
           <li>
-            <span>2020</span>
+            <span>2021</span>
           </li>
         </ul>
       </div>
 
       <div class="p-card"> <!-- Juego Plataformas --> 
         <div class="content">
-          <div class="contentBx">
-            <h3>Juego móvil 2D RPG/Plataformas</h3>
-          </div>
           <div id="p-img">
-            <img th:src="@{/img/Portafolio/Juego-2D.jpg}" class="img-item" alt="Hecho con C# y con el motor de videojuegos multiplataforma Unity, 
+            <img th:src="@{/img/Portafolio/Juego-2D.jpg}" class="img-item" alt="Hecho con C# y el motor de videojuegos multiplataforma Unity  -   
             Adobe Photoshop para el diseño de 'sprites' y texturas" 
-            title="Juego móvil 2D RPG/Plataformas educativo (tablas de multiplicar)" loading="lazy">
+            data-title="Juego para móviles en formato 2D del género RPG / Plataformas enfocado para niños/as con el fin de que estos aprendan y/o 
+            practiquen las tablas de multiplicar mientras se divierten jugando" loading="lazy">
+          </div>
+          <div class="contentBx">
+            <h3 data-es="Juego móvil 2D 'Tablas de multiplicar'" data-en="2D Mobile Game 'Multiplication Tables'"></h3>
           </div>   
           <div class="t-icons"> <!-- Tecnologías -->
             <ul class="p-tecnologies">            
-              <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip"
-                title="C#">
+              <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="C#">
                 <i><img th:src="@{/svg/C.svg}" class="p-tec-svg-icons"></i>
-              </li>                
-              <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip"
-                title="Adobe Photoshop">
-                <i><img th:src="@{/svg/Photoshop.svg}" class="p-tec-svg-icons"></i>
-              </li> 
+              </li>              
               <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="Unity">
                 <i><img th:src="@{/svg/Unity.svg}" class="p-tec-svg-icons"></i>
-              </li>           
+              </li>   
+              <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="p-tec-tooltip" title="Adobe Photoshop">
+                <i><img th:src="@{/svg/Photoshop.svg}" class="p-tec-svg-icons"></i>
+              </li>     
             </ul>
-            <span>Tecnologías</span>      
+            <span data-es="Tecnologías" data-en="Technologies"></span>       
           </div>
         </div> 
         <ul class="p-icons"> <!-- iconos -->        
@@ -473,14 +552,16 @@
       </div>
 
       <div class="p-card"> <!-- Proyecto VR --> 
-        <div class="content">
-          <div class="contentBx">
-            <h3>Juego de Realidad Virtual para móvil</h3>
-          </div>
+        <div class="content">          
           <div id="p-img">
-            <img th:src="@{/img/Portafolio/Proyecto VR.png}" class="img-item" alt="Hecho con C# y con el motor de videojuegos multiplataforma Unity, 
-            el programa de diseño gráfico Sketchup y los servicios de Realidad Virtual (VR) Google Cardboard" 
-            title="Juego móvil 2D RPG/Plataformas educativo (tablas de multiplicar)" loading="lazy">
+            <img th:src="@{/img/Portafolio/Proyecto VR.png}" class="img-item" alt="Hecho con C# y el motor de videojuegos multiplataforma Unity  -   
+            el programa de diseño gráfico Sketchup para los modelos 3D y los servicios de Realidad Virtual (VR) de Google Cardboard" 
+            data-title="Juego / Aplicación de Realidad Virtual cuyo objetivo es el de recorrer algunas de las zonas arqueológicas
+            más importantes de México, así como otros lugares de manera virtual, además de escuchar / leer información detallada
+            sobre cada uno de ellos" loading="lazy">
+          </div>
+          <div class="contentBx">
+            <h3 data-es="Juego de Realidad Virtual de lugares de México" data-en="Virtual Reality Game of Places of Mexico"></h3>
           </div>   
           <div class="t-icons"> <!-- Tecnologías -->
             <ul class="p-tecnologies">            
@@ -497,12 +578,12 @@
                 <i><img th:src="@{/svg/Unity.svg}" class="p-tec-svg-icons"></i>
               </li>                        
             </ul>
-            <span>Tecnologías</span>      
+            <span data-es="Tecnologías" data-en="Technologies"></span>       
           </div>
         </div> 
         <ul class="p-icons"> <!-- iconos -->        
           <li>
-            <span>2021</span>
+            <span>2019</span>
           </li>
         </ul>
       </div>
@@ -517,9 +598,9 @@
         <div class="modal-content">
           <div class="modal-header"> 
             <h6> </h6>          
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" title="Cerrar"></button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" title="Cerrar"></button> <!--btn-close-white-->
           </div>
-          <span class="alert alert-info">Toca la imagen para activar la lupa - Toca el ícono para desactivarla:
+          <span class="alert alert-info" role="alert">Toca la imagen para activar la lupa - Toca el ícono para desactivarla:
             <button class="zoomout" title="Desactivar lupa"><i class="fa-solid fa-magnifying-glass-minus"></i></button>
           </span>          
           <div class="modal-body img-magnifier-container">
@@ -533,7 +614,7 @@
     </div>
   </div>  
   
-  <!-- Hablilidades -->
+  <!-- Hablilidades -->  
   <section class="skills-cards" id="skills-cards" th:fragment="skills" data-aos="fade-up"> 
     <h3 class="sectionTitles">Habilidades</h3>
     <div class="cards-container">      
@@ -958,38 +1039,39 @@
     </div> -->
   </div>
   </section>
-  
+
   <!-- Contacto -->
   <section class="contactme" id="contactme" th:fragment="contact" data-aos="fade-up">
     <div class="content">
       <div class="contact-form" data-aos="flip-right"> <!-- Contact Form -->
-        <h1>Contáctame</h1>        
+        <h1 data-es="Envíame un mensaje" data-en="Send me a message"></h1>        
         <form id="c-form" action="">
-          <label for="name" class="form-label">Nombre<span>*</span></label>
+          <label for="name" class="form-label" data-es="Nombre completo*" data-en="Full name*"><span>*</span></label>
           <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-user"></i></span>
-            <input name="name" id="name" type="text" class="form-control" placeholder="Nombre/Empresa" 
-            aria-describedby="basic-addon1" required>
+            <input name="name" id="name" type="text" class="form-control" placeholder="Escribe aquí tu nombre" aria-describedby="basic-addon1" required>
           </div>
           <label for="email" class="form-label">E-mail<span>*</span></label>
           <div class="input-group mb-3">
             <span class="input-group-text" id="icon-email"><i class="fa-solid fa-at"></i></span>
-            <input name="email" id="email" type="email" class="form-control" placeholder="nombre@email.com" 
+            <input name="email" id="email" type="email" class="form-control" placeholder="Ejemplo: email@email.com" 
             aria-describedby="icon-email" required>                         
           </div>
-          <div id="emailHelp" for="email" class="form-text">No compartiremos tu correo con nadie más</div>          
+          <div id="emailHelp" for="email" class="form-text" data-es="No compartiremos tu correo con nadie más" 
+            data-en="We'll never share your email with anyone else.">
+          </div>          
           <div class="form-floating">            
             <textarea name="message" class="form-control" id="message" placeholder="Mensaje:" required></textarea>
-            <label for="message">Texto<span>*</span></label>
+            <label for="message" data-es="Texto*" data-en="Message*"><span>*</span></label>
           </div>
-          <button id="btnSendEmail" class="btn">Enviar</button>          
+          <button id="btnSendEmail" class="btn"><span data-es="Enviar" data-en="Send"></span></button>          
         </form>
         <a href="mailto:mauba22@outlook.com" id="myEmail" style="opacity: 0;">mail</a> <!-- mailto -->
       </div>
       <div class="icons" data-aos="flip-left"> <!-- Contact Links -->
-        <h4>Contacto:</h4>
+        <h4 data-es="Correo electrónico:" data-en="E-mail:"></h4>
         <p><a href=""><i class="fa-solid fa-envelope fa-fw fa-xl"></i></a> mauba22@outlook.com</p>       
-        <h4>Redes:</h4>        
+        <h4 data-es="Redes Sociales:" data-en="Social Networks"></h4>        
         <div class="i-socialMedia"> <!-- Social Media Icons -->                            
           <a class="button" href="http://www.facebook.com/" target="_blank">                   
             <div class="icon"><i class="fab fa-facebook-f"></i></div>

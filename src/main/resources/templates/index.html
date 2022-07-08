@@ -4,89 +4,115 @@
 <head th:replace="layout/layout :: head"> </head>  
 
 <body>
-
-  <!-- Bóton para regresar al inicio -->
-  <button class="ScrollToTop btn">
-    <i class="fa-solid fa-arrow-up"></i>
-  </button>
+  <div class="main">
   
-  <!-- Header -->
-  <header id="h-introduccion">    
-    <!-- Introducción -->
-    <section class="h-introduccion" > <!--data-aos="zoom-in-up"-->
-      <div class="h-title">
-        <h1><i class="fa-solid fa-terminal fa-fw"></i>"Hola Mundo!!"_</h1>       
-      </div>
-      <div class="h-subtitle">
-        <h5>if(Desarrollador == true){ //Inicia el if</h5>
-      </div>
-
-      <div class="content">
-        <div class="h-back">
-          <span>Back end</span>
-          <p>Más enfocado en la parte de la codificación de las funciones del proyecto</p>                  
-        </div>    
-        <div class="h-image">
-          <img th:src="@{/img/fondo.jpg}" alt="" loading="lazy">
-        </div>    
-        <div class="h-front">
-          <span>Front end</span>
-          <p>Más enfocado en la parte de la codificación de las funciones del proyecto</p>       
+    <!-- Bóton para regresar al inicio -->
+    <button class="ScrollToTop btn">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+  
+    <!-- <span class="tags parts">header</span> -->    
+    <!-- Header -->
+    <header id="h-introduccion">      
+      <!-- Introducción -->
+      <section class="h-introduccion">       
+        <div class="h-title">
+          <h1><i class="fa-solid fa-terminal fa-fw"></i><span data-es="'Hola Mundo!!'_" data-en="'Hello World!!'_"></span></h1>
+        </div>
+        <div class="h-subtitle">
+          <h5 data-es="if(Desarrollador == true){ //Inicia el if" data-en="if(Developer == true){ //Start if"></h5>
+        </div>
+  
+        <div class="content">
+          <div class="h-back">
+            <span>Back end</span>
+            <p data-es="Más enfocado en la parte de la codificación de las funciones del proyecto"
+               data-en="Text in english lol"></p>
+          </div>
+          <div class="h-image">
+            <img th:src="@{/img/fondo.jpg}" alt="" loading="lazy">
+          </div>
+          <div class="h-front">
+            <span>Front end</span>
+            <p data-es="Más enfocado en la parte de la codificación de las funciones del proyecto"
+               data-en="Text in english lol"></p>
+          </div>
+        </div>
+  
+        <h5 id="h5-final"><span data-es="} //Termina el if" data-en="} //End if"></span> </h5>
+        <a href="#contactme" class="btn-h-contact btn"><span data-es="Contáctame" data-en="Contact me"></span></a>       
+      </section>
+    </header>
+  
+    <!-- span oculto que funciona como trigger usado para aplicar el efecto 'stuck' a la navbar -->
+    <span class="position-absolute trigger"></span>
+    <!-- Navbar -->
+    <nav th:replace="layout/layout :: navbar"></nav>
+    <div th:replace="layout/layout :: modalSpinner"></div>
+  
+    <!-- Sobre mí -->
+    <section class="aboutme" id="aboutme">
+      <div class="content" data-aos="fade-up">
+        <img th:src="@{/img/fondo.jpg}" alt="" loading="lazy">
+        <div class="abtm-text">
+          <h1><i class="fa-solid fa-address-card fa-fw"></i>&nbsp;<span data-es="Sobre mí" data-en="About me"></span> </h1>                   
+          <h5 data-es="Me llamo Edgar Mauricio Barrueta Aguirre" data-en="My name is Edgar Mauricio Barrueta Aguirre"></h5>
+          <p 
+            data-es="Me considero un desarrollador Java 
+            Soy un desarrollador Java que ya ni se que esctbirie askddsak
+            ljsdljk sdljklsjadlkjalsdjk
+            sjakljsdalkjlsd dsljljsaljlsda
+            asdjkjksadjksadkjskjksajkjsajsadjk jsakjasdkjkj"
+            data-en="english">
+          </p>
+          <div class="abtm-footer">
+            <h6>Hobbies:</h6>
+            <i class="fa-solid fa-laptop-code fa-fw fa-xl"></i>
+            <i class="fa-solid fa-guitar fa-fw  fa-xl"></i>
+            <i class="fa-solid fa-headphones fa-fw  fa-xl"></i>
+            <i class="fa-solid fa-gamepad fa-fw  fa-xl"></i>
+            <i class="fa-solid fa-film fa-fw fa-xl"></i>
+            <i class="fa-solid fa-mug-hot fa-fw fa-xl"></i>
+          </div>
+          <a th:href="@{/files/CV.pdf}" class="btnCV btn" target="_blank"><span data-es="Currículum Vitae" data-en="Resume"></span></a>
         </div>
       </div>
-
-      <h5 id="h5-final">} //Termina el if</h5>      
-      <button onclick="window.location.href='#contactme'" class="btn-h-contact btn">Contáctame</button>    
     </section>
-  </header>
+  
+    <!-- Portafolio -->
+    
+    <section th:replace="layout/layout :: portafolio"></section>    
+  
+    <!-- Skills -->
+    <section th:replace="layout/layout :: skills"></section>
+  
+    <!-- Contacto -->
+    <section th:replace="layout/layout :: contact"></section>
+  
+  </div>
 
-  <!-- Trigger oculto usado para aplicar el efecto 'stuck' a la navbar -->
-  <span class="position-absolute trigger"></span> 
-  <!-- Navbar -->
-  <nav th:replace="layout/layout :: navbar"></nav>
-  
-  <!-- Sobre mí -->
-  <section class="aboutme" id="aboutme">
-    <div class="content" data-aos="fade-up">
-      <img th:src="@{/img/fondo.jpg}" alt="" loading="lazy">
-      <div class="abtm-text">
-        <h1><i class="fa-solid fa-address-card fa-fw"></i>&nbsp; Sobre mí</h1>
-        <h5>Me llamo Edgar Mauricio Barrueta Aguirre</h5>
-        <p>Soy un desarrollador Java que ya ni se que esctbirie askddsak
-          ljsdljk sdljklsjadlkjalsdjk
-          sjakljsdalkjlsd dsljljsaljlsda
-          asdjkjksadjksadkjskjksajkjsajsadjk jsakjasdkjkj
-        </p>
-        <div class="abtm-footer">
-          <h6>Hobbies:</h6>
-          <i class="fa-solid fa-laptop-code fa-fw fa-xl"></i>
-          <i class="fa-solid fa-guitar fa-fw  fa-xl"></i>
-          <i class="fa-solid fa-headphones fa-fw  fa-xl"></i>
-          <i class="fa-solid fa-gamepad fa-fw  fa-xl"></i>
-          <i class="fa-solid fa-film fa-fw fa-xl"></i>
-          <i class="fa-solid fa-mug-hot fa-fw fa-xl"></i>
-        </div>
-        <button href="#" class="btnCV btn">Currículum Vitae</button>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Portafolio -->
-  <section th:replace="layout/layout :: portafolio"></section>
-  <!-- Gallery Modal -->
-  <div th:replace="layout/layout :: p-modal"></div> 
-  
-  <!-- Skills -->
-  <section th:replace="layout/layout :: skills"></section>
-  
-  <!-- Contacto -->
-  <section th:replace="layout/layout :: contact"></section>
+  <!-- Portafolio Image Modal -->
+  <div th:replace="layout/layout :: p-modal"></div>
   
   <!-- Footer -->
-  <footer>    
-    <div class="footer-text">
-      Edgar Mauricio Barrueta Aguirre &copy; 2022 Todos los derechos reservados
+  <footer id="footer">
+
+    <div class="footer-content">
+      <h3>titulo</h3>      
+      <p>subtitle</p>
+      <ul class="menu">
+        <li><a href="#h-introduccion">Inicio</a></li>
+        <li><a href="#aboutme">Sobre mí</a></li>
+        <li><a href="#portafolio">Portafolio</a></li>
+        <li><a href="#skills-cards">Habilidades</a></li>
+        <li><a href="#contactme">Contacto</a></li>
+      </ul>
     </div>
+
+    <div class="footer-bottom">
+      <p>Edgar Mauricio Barrueta Aguirre <span>&copy;2022</span></p>
+    </div>
+
   </footer>
   
   <!-- Scripts -->

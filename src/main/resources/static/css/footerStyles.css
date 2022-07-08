@@ -1,4 +1,63 @@
-/* ----------------------------------------------- SOCIAL MEDIA -------------------------------*/
+/* --------------------------------------------------------------- FOOTER ----------------------------------------------------------------- */
+.main { /* Main div content */
+  position: relative;
+  z-index: 1;    
+  box-shadow: #000 0 7px 35px 0;
+  background-size: contain; background-position: center; background-repeat: no-repeat;
+}
+footer { /* Footer content */
+  position: fixed;
+  height: 30vh; width: 100%;   
+  padding: 30px 0;    
+  color: #111;
+  background-color: whitesmoke;
+  
+  z-index: -1;
+  left: 0; right: 0; bottom: 0;   
+}
+.footer-content { /* Footer-Content div*/
+  display: flex;
+  align-items: center; justify-content: center; flex-direction: column;
+  text-align: center;
+}
+.footer-content h3 { /* Footer-Content div Title */
+  font-size: 1.5rem; font-weight: 400;
+  text-transform: capitalize;
+  line-height: 3rem;
+}
+.footer-content p { /* Footer-Content div Subtitle */
+  max-width: 500px;
+  margin: 5px auto;
+  line-height: 28px; font-size: 14px;
+}
+.footer-content .menu { /* Footer-Content div Menu */
+  list-style: none;
+  display: flex;
+  align-items: center; justify-content: center;  
+}
+.footer-content .menu li { margin: 0 20px; }
+.footer-content .menu a {
+  text-decoration: none; color: #b2071d;
+}
+.footer-bottom { /* Footer-Bottom div */  
+  background-color: #000; color: white; opacity: .5;
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  float: inline-end;
+ 
+}
+.footer-bottom p { /* Footer-Bottom div text */
+  word-spacing: 2px;
+  text-transform: capitalize;
+  margin: 0;
+}
+.footer-bottom span {
+  text-transform: uppercase;
+  opacity: .5; font-weight: 200;
+}
+
+/* ------------------------------------------------------------ SOCIAL MEDIA ---------------------------------------------------------------*/
 .i-socialMedia { /* Contact-Social Media Div*/
   display: grid;
   height: 100%; width: 100%;
@@ -80,10 +139,10 @@
   color: #b2071d;
 }
 @media screen and (max-width: 1014px) {
-  .contact-form { width: 100%; }
   .i-socialMedia {
     display: flex;
     margin: 0 5px 0;     
   }
+  .i-socialMedia .button { margin: 0 5px 0; }
   .i-socialMedia .button span { font-size: 8px; }  
 }
