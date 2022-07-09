@@ -91,7 +91,7 @@ $(document).ready(function() {
 	};
 });
 
-function modalSpinner(){
+function modalSpinner() {
     $('.modalSpinner').modal('show');
     setTimeout(function () {        
         $('.modalSpinner').modal('hide');
@@ -108,7 +108,5 @@ switchLang("es");
 $(".switchlang").click(function() {
     modalSpinner();  
     switchLang($(this).data("lang"))
-    
-        
 });
 

@@ -13,30 +13,32 @@ html { scroll-behavior: smooth; } /* Para darle efecto al Scroll vertical */
 html, body {
 	padding: 0;	margin: 0;
 	background-color: #F4F6F7;
-    /* background-image: radial-gradient(circle, #f4f6f7, #ddedf2, #c5e3ec, #acdbe4, #91d2da, #82c8ce, #73bec3, #64b4b7, #5ea6aa, #57999d, #518c90, #4b7f83); */
 }
-
+.sectionTitles:before {
+    content: "<h3> ";
+    font-family: cursive;
+    color: #515152;
+    font-size: 18px;
+    position: absolute;
+    margin-top: -4rem;
+    left: -1rem;
+}
 .sectionTitles { /* Sections Titles */
-    width: 100%;
+    width: 100%;    
     background-color: #4B7F83; color: white;
     border-radius: 5px; padding: 0.5rem;
     text-align: center; font-size: 20px;
     margin-bottom: 5px;
+    position: relative;
 }
-
-.parts {
-    color: black;
-    font-size: 1.125rem;
-    opacity: 0.75;
-    display: flex;   
-    width: 90%;
-}
-
-.tags, .parts {
-    color: black;
-    font-size: 15px;
-    opacity: 0.75;
-
+.sectionTitles:after {
+    content: " </h3>";
+    font-family: cursive;
+    color: #515152;
+    font-size: 18px;
+    position: absolute;
+    left: -1rem;
+    bottom: -5rem;
 }
 
 /* ------------------------------------------------------------ DISPLAY ------------------------------------------------------------------ */
@@ -72,13 +74,10 @@ header, .aboutme, .portafolio, .contactme {
     background-color: black; color: white;
 }
 
-.modalSpinner .mod-spinner{
-    display: table;
-    text-align: center;
-    position: relative; margin: 0 auto;
-    background-color: transparent; border: none;
-    box-shadow: none;
-}  
+.modalSpinner .fa-spin, .modalSpinner #spinnerSpan {
+    color: white; font-size: 35px;
+    text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 5px #000;
+}
 
 /* -------------------------------------------------------------------- NAVBAR ---------------------------------------------------------- */
 .sticky-top {
@@ -90,7 +89,7 @@ header, .aboutme, .portafolio, .contactme {
 }
 .navbar-brand, .stuck .navbar.sticky-top .navbar-brand {
     position: absolute;
-    margin: 0; padding: 0; border: 1px solid red;
+    margin: 0; padding: 0; border-radius: 5px;
 }
 .navbar-brand .switchlang {    
     border: 0; background-color: transparent;     
@@ -101,24 +100,24 @@ header, .aboutme, .portafolio, .contactme {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);    
 }
 .navbar-brand .switchlang img:hover {
-    transform: translateY(3px);
+    transform: translateY(-2px);
 }
 .navbar .navbar-collapse a:hover {
     background-color: #4B7F83;
     border-radius: 10px;
     transition: 0.3s; transform: translateY(3px);
 }
-.nav-tabs a.nav-link, a.nav-link.active { 
+.navbar-nav a.nav-link, a.nav-link.active { 
     text-shadow: 2px 2px 4px #324B4D; transition: 0.5s;
 }
 .stuck .navbar.sticky-top { /* Navbar-Sticky Styles */
     background-color: #4B7F83;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);      
 }
-.stuck .navbar.sticky-top .nav-tabs a.nav-link.active {
+.stuck .navbar.sticky-top .navbar-nav a.nav-link.active {
     text-shadow: 2px 2px 4px #324B4D; transition: 0.5s;
 }
-.stuck .navbar.sticky-top .nav-tabs a.nav-link {
+.stuck .navbar.sticky-top .navbar-nav a.nav-link {
     text-shadow: 2px 2px 4px #324B4D; transition: 0.5s;
 } 
 .stuck .navbar.sticky-top .navbar-collapse a:hover {
