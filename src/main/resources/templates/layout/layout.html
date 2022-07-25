@@ -25,7 +25,7 @@
   <nav id="navbar" class="navbar sticky-top navbar-expand-xl navbar-dark" th:fragment="navbar">  
     <div class="container-fluid">  
       <a class="navbar-brand">            
-        <span id="nb-brand-span" data-es="Lenguaje:" data-en="Language:"></span>
+        <span id="nb-brand-span" data-es="Lenguaje:" data-en="Language:"></span>        
         <button class='switchlang' data-lang="es" title="Español"><img th:src="@{/svg/mx.svg}" alt="Español"></button>
         <button class='switchlang' data-lang="en" title="English"><img th:src="@{/svg/us.svg}" alt="English"></button>
       </a>    
@@ -69,7 +69,7 @@
         <div class="content">          
           <div id="p-img">
             <img th:src="@{/img/Portafolio/Proyecto GFR.png}" class="img-item" alt=" Hecho con Java, la librería gráfica Java Swing, 
-             entre otras, la librería JasperReports para la creación de reportes y NetBeans IDE  -  Servidor: Base de Datos SQL" 
+             entre otras, la librería JasperReports para la creación de reportes y NetBeans IDE  -  Servidor: Base de Datos SQL"
              data-title="Sistema para el control del almacén de herramientas, así como también de las entradas y salidas de estas">
           </div> 
           <div class="contentBx">
@@ -577,11 +577,16 @@
       data-bs-backdrop="static" data-bs-keyboard="false">
       <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
         <div class="modal-content">
-          <div class="modal-header b-color-4B7"> 
-            <h6> </h6>          
+          <div class="modal-header b-color-4B7">             
+            <h6> </h6>                   
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" title="Cerrar - Close"></button> <!--btn-close-white-->
           </div>
-          <span class="alert alert-light" role="alert">Toca la imagen para activar la lupa - Toca el siguiente ícono para desactivarla:
+          <div id="google_translate_element"> <!-- Google Translate Plugin -->
+            <span data-bs-toggle="tooltip" data-bs-placement="left" data-bs-custom-class="m-gt-tooltip" title="Para traducir el texto a inglés">
+              <i class="fa-solid fa-language fa-beat-fade" style="--fa-beat-fade-opacity: 0.65; --fa-beat-fade-scale: 1.075;"></i>
+            </span>
+          </div>
+          <span class="alert alert-light span-info" role="alert">Toca la imagen para activar la lupa - Toca el siguiente ícono para desactivarla:
             <button class="zoomout" title="Desactivar lupa"><i class="fa-solid fa-magnifying-glass-minus fa-shake"></i></button>
           </span>          
           <div class="modal-body img-magnifier-container radius-padding ">
@@ -597,7 +602,7 @@
   
   <!-- Hablilidades -->  
   <section class="skills-cards" id="skills-cards" th:fragment="skills" data-aos="fade-up"> 
-    <h3 class="sectionTitles">Habilidades</h3>
+    <h3 class="sectionTitles" data-es="Habilidades" data-en="Skills"></h3>
     <div class="cards-container">      
       <div class="card-skills" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="tooltip-success"
         title="Java">
@@ -1020,16 +1025,16 @@
           <i class="fa-solid fa-envelope fa-beat" style="--fa-beat-scale: 1.2;"></i>
         </h1>        
         <form id="c-form" action="">
-          <label for="name" class="form-label" data-es="Nombre completo" data-en="Full name"></label><span>*</span>
+          <label for="name" class="form-label" data-es="Nombre completo / Empresa:" data-en="Full name / Company:"></label><span>*</span>
           <div class="input-group mb-3">
             <span class="input-group-text" id="name-icon"><i class="fa-solid fa-user"></i></span>
-            <input name="name" id="name" type="text" class="form-control" placeholder="Escribe aquí tu nombre" 
+            <input name="name" id="name" type="text" class="form-control" placeholder="Escribe tu nombre/Write your name:"
               aria-describedby="name-icon" required>
           </div>
-          <label for="email" class="form-label">E-mail</label><span>*</span>
+          <label for="email" class="form-label">E-mail:</label><span>*</span>
           <div class="input-group mb-3">
             <span class="input-group-text" id="icon-email"><i class="fa-solid fa-at"></i></span>
-            <input name="email" id="email" type="email" class="form-control" placeholder="Ejemplo: email@email.com" 
+            <input name="email" id="email" type="email" class="form-control" placeholder="Ejemplo/Example: email@email.com" 
               aria-describedby="icon-email" required>                         
           </div>
           <div id="emailHelp" for="email" class="form-text" data-es="No compartiremos tu correo con nadie más" 
@@ -1037,7 +1042,7 @@
           </div>          
           <div class="form-floating">            
             <textarea name="message" class="form-control" id="message" placeholder="Mensaje:" required></textarea>
-            <label for="message" data-es="Texto" data-en="Message"></label>
+            <label for="message" data-es="Texto:" data-en="Message:"></label>
           </div>
           <button id="btnSendEmail" class="btn"><span data-es="Enviar" data-en="Send"></span></button>          
         </form>
@@ -1050,7 +1055,7 @@
           <input type="text" value="mauba22@outlook.com" id="email-copy" readonly>
           <button id="copy-btn" onclick="copyEmail()" title="Copiar - Copy"><i class="fa-solid fa-copy"></i></button>
         </p>               
-        <h4 data-es="Redes Sociales:" data-en="Social Networks"></h4>        
+        <h4 data-es="Mis redes:" data-en="Social Networks:"></h4>        
         <div class="i-socialMedia radius-padding"> <!-- Social Media Icons -->                            
           <a class="button" href="http://www.facebook.com/" target="_blank">                   
             <div class="icon"><i class="fab fa-facebook-f"></i></div>
@@ -1060,18 +1065,14 @@
             <div class="icon"><i class="fab fa-linkedin"></i></div>
             <span>Linkedin</span>
           </a>
-          <!-- <a class="button" href="http://www.facebook.com/" target="_blank">
+          <a class="button" href="http://www.facebook.com/" target="_blank">
             <div class="icon"><i class="fab fa-telegram"></i></div>
             <span>Telegram</span>
-          </a> -->
+          </a>
           <a class="button" href="http://www.facebook.com/" target="_blank">
             <div class="icon"><i class="fab fa-github"></i></div>
             <span>GitHub</span>
-          </a> 
-          <a class="button" href="http://www.facebook.com/" target="_blank">
-            <div class="icon"><i class="fab fa-stack-overflow"></i></div>
-            <span id="stackov-icon" style="font-size: 9px;">Stack-Overflow</span>
-          </a>       
+          </a>                
           <a href="" class="button" target="_blank">
             <div class="icon"><i class="fab fa-codepen"></i></div>
             <span>CodePen</span>
@@ -1113,6 +1114,8 @@
       var tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
       var tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
     </script> 
+    <!-- Google Translate Plugin -->
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   </th:block>
   
 </body>
